@@ -1,0 +1,42 @@
+[
+    {
+        "id": 345,
+        "comment": "Without hotel, we would have gone bankrupt by now. I made back the purchase price in just 48 hours!",
+        "rating": 4,
+        "user": {
+            "id": 355,
+            "name": "Mirna Lukic",
+            "profile_image": "/images/pexels-andrea-piacquadio-3765175_tn.jpg"
+        }
+    },
+    {
+        "id": 348,
+        "comment": "Buy this now. Hotel is the next killer app.",
+        "rating": 5,
+        "user": {
+            "id": 355,
+            "name": "Kobe Stevens",
+            "profile_image": "/images/pexels-italo-melo-2379004_tn.jpg"
+        }
+    },
+    {
+        "id": 349,
+        "comment": "I made back the purchase price in just 48 hours! Hotel is both attractive and highly adaptable. You've saved our business! You've saved our business!",
+        "rating": 5,
+        "user": {
+            "id": 355,
+            "name": "Nevena Banfic",
+            "profile_image": "/images/pexels-moose-photos-1036623_tn.jpg"
+        }
+    },
+    {
+        "id": 350,
+        "comment": "You've saved our business! Hotel is the real deal! We've used hotel for the last five years.",
+        "rating": null,
+        "user": {
+            "id": 355,
+            "name": "Stevan Mutic",
+            "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+        }
+    }
+]

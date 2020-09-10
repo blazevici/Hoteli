@@ -1,0 +1,813 @@
+[
+    {
+        "id": 2345,
+        "slug": "standard-room",
+        "title": "Standard room",
+        "price": 600,
+        "formatted_price": "600kn",
+        "squares": 35,
+        "max_adults": 4,
+        "max_children": 1,
+        "created_at": "2020-08-12 12:34:34",
+        "updated_at": "2020-08-12 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This average-sized, rectangular living room has coordinating metal and plastic furniture.  The seating is cushioned.  The floor is wood and the walls are painted and decorated with a wallpaper border.  Light is provided by ceiling lights.  The room is done in autumn colors and overall has a quirky look.  Among the first things one notices walking in is several houseplants.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": true
+            },
+            {
+                "cleaning": true
+            },
+            {
+                "phone": true
+            },
+            {
+                "restaurant": true
+            },
+            {
+                "spa_zone": true
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Lorem ipsum",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Without hotel, we would have gone bankrupt by now. I made back the purchase price in just 48 hours!",
+                "user": {
+                    "id": 355,
+                    "name": "Luka Lukic",
+                    "profile_image": "/images/pexels-andrea-piacquadio-3765175_tn.jpg"
+                },
+                "replies" : [
+                    {
+                        "id": 347,
+                        "comment": "Great to hear that. Thanks",
+                        "user": {
+                            "id": 355,
+                            "name": "Ivona Ivonic",
+                            "profile_image": "/images/pexels-moose-photos-1036623_tn.jpg"
+                        }
+                    }
+                ]
+            }
+        ],
+        "reserved_dates": [
+            {
+                "date": "2020-08-10"
+            },
+            {
+                "date": "2020-08-11"
+            },
+            {
+                "date": "2020-08-12"
+            },
+            {
+                "date": "2020-08-23"
+            },
+            {
+                "date": "2020-08-24"
+            },
+            {
+                "date": "2020-08-25"
+            },
+            {
+                "date": "2020-08-26"
+            },
+            {
+                "date": "2020-08-31"
+            },
+            {
+                "date": "2020-09-01"
+            },
+            {
+                "date": "2020-09-02"
+            }
+        ]
+    },
+    {
+        "id": 2345,
+        "slug": "small-room",
+        "title": "Small room",
+        "price": 300,
+        "formatted_price": "300kn",
+        "squares": 20,
+        "max_adults": 2,
+        "max_children": 1,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This spacious, L-shaped bathroom has a shower and sink with glass fixtures.  The sink is set into a tile counter.  The floor is tiled and the walls are papered.  Light is provided by wall lamps and a ceiling light.  The room is done in warm colors and overall almost looks extraterrestrial.  Among the first things one notices walking in is an abundance of clutter.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": false
+            },
+            {
+                "cleaning": false
+            },
+            {
+                "phone": false
+            },
+            {
+                "restaurant": false
+            },
+            {
+                "spa_zone": false
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Small room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Thank you so much for your help.",
+                "user": {
+                    "id": 355,
+                    "name": "Mario Maric",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            },
+            {
+                "id": 345,
+                "comment": "The service was excellent. I didn't even need training. Hotel has completely surpassed our expectations.",
+                "user": {
+                    "id": 355,
+                    "name": "Niko Nikic",
+                    "profile_image": "/images/pexels-italo-melo-2379004_tn.jpg"
+                },
+                "replies" : []
+            }
+        ],
+        "reserved_dates": [
+            {
+                "date": "2020-09-10"
+            },
+            {
+                "date": "2020-09-11"
+            },
+            {
+                "date": "2020-09-12"
+            },
+            {
+                "date": "2020-09-23"
+            },
+            {
+                "date": "2020-09-24"
+            },
+            {
+                "date": "2020-09-25"
+            },
+            {
+                "date": "2020-09-26"
+            },
+            {
+                "date": "2020-09-31"
+            },
+            {
+                "date": "2020-09-01"
+            },
+            {
+                "date": "2020-09-02"
+            }
+        ]
+    },
+    {
+        "id": 2345,
+        "slug": "big-room",
+        "title": "Big room",
+        "price": 1500,
+        "formatted_price": "1500kn",
+        "squares": 50,
+        "max_adults": 4,
+        "max_children": 2,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This small, rectangular bedroom has mismatched metal and glass furniture.  The floor is carpeted and the walls are papered.  Light is provided by floor lamps and a ceiling light.  The room is done in murky colors and overall looks like an old castle.  Among the first things one notices walking in is a jewelry rack.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": true
+            },
+            {
+                "cleaning": true
+            },
+            {
+                "phone": true
+            },
+            {
+                "restaurant": true
+            },
+            {
+                "spa_zone": true
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Big room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "It's just amazing. Hotel has completely surpassed our expectations",
+                "user": {
+                    "id": 355,
+                    "name": "Mario Maric",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            }
+        ],
+        "reserved_dates": []
+    },
+    {
+        "id": 2345,
+        "slug": "luxury-room",
+        "title": "Luxury room",
+        "price": 3500,
+        "formatted_price": "3500kn",
+        "squares": 120,
+        "max_adults": 5,
+        "max_children": 3,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This spacious, rectangular kitchen has resin counters and a sink with metal fixtures.  The floor is stone and the walls are painted and decorated with a wallpaper border.  Light is provided by wall lamps and a ceiling light.  The room is done in muted colors and overall looks very eclectic.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": true
+            },
+            {
+                "cleaning": true
+            },
+            {
+                "phone": true
+            },
+            {
+                "restaurant": true
+            },
+            {
+                "spa_zone": true
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Luxury room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Great job, I will definitely be ordering again! I use hotel often. Just what I was looking for.",
+                "user": {
+                    "id": 355,
+                    "name": "Mario Maric",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            }
+        ],
+        "reserved_dates": [
+            {
+                "date": "2020-08-10"
+            },
+            {
+                "date": "2020-08-11"
+            },
+            {
+                "date": "2020-08-12"
+            },
+            {
+                "date": "2020-08-23"
+            },
+            {
+                "date": "2020-08-24"
+            },
+            {
+                "date": "2020-08-25"
+            },
+            {
+                "date": "2020-08-26"
+            },
+            {
+                "date": "2020-08-31"
+            },
+            {
+                "date": "2020-09-01"
+            },
+            {
+                "date": "2020-09-02"
+            }
+        ]
+    },
+     {
+        "id": 2345,
+        "slug": "superior-room",
+        "title": "Superior room",
+        "price": 5000,
+        "formatted_price": "5000kn",
+        "squares": 200,
+        "max_adults": 10,
+        "max_children": 5,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This spacious, rectangular kitchen has resin counters and a sink with metal fixtures.  The floor is stone and the walls are painted and decorated with a wallpaper border.  Light is provided by wall lamps and a ceiling light.  The room is done in muted colors and overall looks very eclectic.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": true
+            },
+            {
+                "cleaning": true
+            },
+            {
+                "phone": true
+            },
+            {
+                "restaurant": true
+            },
+            {
+                "spa_zone": true
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Superior room room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Great job, I will definitely be ordering again! I use hotel often. Just what I was looking for.",
+                "user": {
+                    "id": 355,
+                    "name": "Mario Maric",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            },
+            {
+                "id": 345,
+                "comment": "Hotel has got everything I need.",
+                "user": {
+                    "id": 355,
+                    "name": "Nikolina Maric",
+                    "profile_image": "/images/pexels-moose-photos-1036623_tn.jpg"
+                },
+                "replies" : [
+                    {
+                        "id": 223,
+                        "comment": "We were treated like royalty. I could probably go into sales for you. It fits our needs perfectly.",
+                        "user": {
+                            "id": 355,
+                            "name": "Mario Mesarnik",
+                            "profile_image": "/images/pexels-italo-melo-2379004_tn.jpg"
+                        },
+                        "replies" : []
+                    }
+                ]
+            }
+        ],
+         "reserved_dates": [
+             {
+                 "date": "2020-08-25"
+             },
+             {
+                 "date": "2020-08-26"
+             },
+             {
+                 "date": "2020-08-31"
+             },
+             {
+                 "date": "2020-09-01"
+             },
+             {
+                 "date": "2020-09-02"
+             }
+         ]
+    },
+    {
+        "id": 2345,
+        "slug": "nature-room",
+        "title": "Nature room",
+        "price": 1200,
+        "formatted_price": "1200kn",
+        "squares": 40,
+        "max_adults": 2,
+        "max_children": 1,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This cramped, square bedroom has coordinating wooden furniture.  The floor is carpeted and the walls are textured and painted.  Light is provided by table lamps.  The room is done in stormy colors and overall almost looks extraterrestrial.  Among the first things one notices walking in are a laptop computer and a large floor mirror.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": true
+            },
+            {
+                "cleaning": true
+            },
+            {
+                "phone": true
+            },
+            {
+                "restaurant": true
+            },
+            {
+                "spa_zone": true
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Nature room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Dude, your stuff is the bomb! I have gotten at least 50 times the value from hotel",
+                "user": {
+                    "id": 355,
+                    "name": "Mihael Tasic",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            }
+        ],
+        "reserved_dates": [
+            {
+                "date": "2020-08-10"
+            },
+            {
+                "date": "2020-08-11"
+            },
+            {
+                "date": "2020-08-12"
+            },
+            {
+                "date": "2020-08-23"
+            },
+            {
+                "date": "2020-08-24"
+            },
+            {
+                "date": "2020-08-25"
+            },
+            {
+                "date": "2020-08-26"
+            },
+            {
+                "date": "2020-08-31"
+            },
+            {
+                "date": "2020-09-01"
+            },
+            {
+                "date": "2020-09-02"
+            }
+        ]
+    },
+    {
+        "id": 2325,
+        "slug": "apartman",
+        "title": "Apartman",
+        "price": 350,
+        "formatted_price": "350kn",
+        "squares": 20,
+        "max_adults": 2,
+        "max_children": 1,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This cramped, square bedroom has coordinating wooden furniture.  The floor is carpeted and the walls are textured and painted.  Light is provided by table lamps.  The room is done in stormy colors and overall almost looks extraterrestrial.  Among the first things one notices walking in are a laptop computer and a large floor mirror.",
+        "services": [
+            {
+                "accessories": true
+            },
+            {
+                "bar": true
+            },
+            {
+                "cleaning": true
+            },
+            {
+                "phone": true
+            },
+            {
+                "restaurant": true
+            },
+            {
+                "spa_zone": true
+            },
+            {
+                "transport": true
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Nature room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Hotel was the best investment I ever made. I wish I would have thought of it first. I was amazed at the quality of hotel.",
+                "user": {
+                    "id": 355,
+                    "name": "Ervin Magic",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            }
+        ],
+        "reserved_dates": [
+            {
+                "date": "2020-08-10"
+            },
+            {
+                "date": "2020-08-11"
+            },
+            {
+                "date": "2020-08-12"
+            },
+            {
+                "date": "2020-08-23"
+            },
+            {
+                "date": "2020-08-24"
+            },
+            {
+                "date": "2020-08-25"
+            },
+            {
+                "date": "2020-08-26"
+            },
+            {
+                "date": "2020-08-31"
+            },
+            {
+                "date": "2020-09-01"
+            },
+            {
+                "date": "2020-09-02"
+            }
+        ]
+    },
+    {
+        "id": 2325,
+        "slug": "apartman-2",
+        "title": "Apartman 2",
+        "price": 300,
+        "formatted_price": "300kn",
+        "squares": 20,
+        "max_adults": 2,
+        "max_children": 1,
+        "created_at": "2020-08-13 12:34:34",
+        "updated_at": "2020-08-17 12:34:34",
+        "images" : [
+            {
+                "id": 323,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            },
+            {
+                "id": 326,
+                "url": "https://images.unsplash.com/photo-1595161579403-d2463f2b9e9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1248&q=80"
+            },
+            {
+                "id": 328,
+                "url": "https://images.unsplash.com/photo-1590490359854-dfba19688d70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+            }
+        ],
+        "description": "This average-sized, L-shaped bedroom has matching wooden and plastic furniture.  The floor is stone and the walls are painted with a wallpapered dado.  Light is provided by wall and floor lamps.  The room is done in colors that remind you of a beautiful sunset and overall has a cluttered look.  Among the first things one notices walking in is a jewelry rack.",
+        "services": [
+            {
+                "accessories": false
+            },
+            {
+                "bar": false
+            },
+            {
+                "cleaning": false
+            },
+            {
+                "phone": false
+            },
+            {
+                "restaurant": false
+            },
+            {
+                "spa_zone": false
+            },
+            {
+                "transport": false
+            },
+            {
+                "wifi": true
+            }
+        ],
+        "hotel_rules": [
+            "Nature room",
+            "A Bunch of Random Objects",
+            "2D Art Piece"
+        ],
+        "comments" : [
+            {
+                "id": 345,
+                "comment": "Hotel was the best investment I ever made. I wish I would have thought of it first. I was amazed at the quality of hotel.",
+                "user": {
+                    "id": 355,
+                    "name": "Ervin Magic",
+                    "profile_image": "/images/pexels-tim-savage-736716_tn.jpg"
+                },
+                "replies" : []
+            }
+        ],
+        "reserved_dates": [
+            {
+                "date": "2020-08-10"
+            },
+            {
+                "date": "2020-08-11"
+            },
+            {
+                "date": "2020-08-12"
+            },
+            {
+                "date": "2020-08-23"
+            },
+            {
+                "date": "2020-08-24"
+            },
+            {
+                "date": "2020-08-25"
+            },
+            {
+                "date": "2020-08-26"
+            },
+            {
+                "date": "2020-08-31"
+            },
+            {
+                "date": "2020-09-01"
+            },
+            {
+                "date": "2020-09-02"
+            }
+        ]
+    }
+]

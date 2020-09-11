@@ -1,0 +1,92 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
+
+$header-info-color: #F0ECE7;
+$header-color: #272525;
+$button-color: #9B6333;
+$font-color: #000000;
+
+$font-logo: "Lora", serif;
+
+
+body {
+
+    .container-fluid {
+        padding: 0;
+        margin: 0;
+
+        .header-info {
+            background: $header-info-color;
+
+            .info-container {
+                margin: auto;
+                padding: 0.25rem 0;
+
+                .info-item {
+                    display: inline-block;
+                    padding-right: 1rem;
+
+                    a {
+                        color: $font-color;
+                        font-size: 0.95rem;
+                    }
+                }
+
+                .right {
+                    float: right;
+
+                    .search-icon {
+                        padding-right: 0.5rem;
+                    }
+
+                    .selected-lang a {
+                        color: $button-color;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .header-navbar {
+            background: $header-color;
+
+            .navbar-container {
+                margin: auto;
+                padding: 0.25rem 0;
+                position: relative;
+                text-align: center;
+
+                .navbar-item-logo {
+                    float: left;
+
+                    .navbar-logo {
+                        font-size: 2.25rem;
+                        font-family: $font-logo;
+                        font-weight: 700;
+
+                        color: #FFFFFF !important;
+                    }
+
+                    .navbar-logo:hover {
+                        text-decoration: none;
+                    }
+                    
+                }
+
+                .navbar-links {
+                    display: inline-block;
+                    padding: 1rem 0;
+
+                    .navbar-item {
+                        margin: 0 2.5rem 0 0;
+                    }
+
+                    .navbar-item a {
+                        color: #FFFFFF !important;
+                    }
+                }
+            }
+        }
+    }
+    
+}

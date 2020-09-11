@@ -15,8 +15,8 @@ class HomeController extends BaseController
     public function index()
     {
         $products = json_decode(file_get_contents(dirname(__DIR__).'/home_products.json'));
-        $news = json_decode(file_get_contents(dirname(__DIR__).'/home_products.json'));
-        $reviews = json_decode(file_get_contents(dirname(__DIR__).'/home_products.json'));
+        $news = json_decode(file_get_contents(dirname(__DIR__).'/news.json'));  // WAS home_products.json
+        $reviews = json_decode(file_get_contents(dirname(__DIR__).'/reviews.json'));  // WAS home_products.json
 
         return $this->render('home.html.twig', [
             'products' => $products,

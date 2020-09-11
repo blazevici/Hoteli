@@ -1,2 +1,80 @@
-<!-- TWIG home page -->
-<!-- https://twig.symfony.com/doc/3.x/ -->
+{% extends "main_layout.html.twig" %}
+
+{% block title %}Hoteli{% endblock %}
+
+{% block header %}
+    <div class="header-info">
+        <div class="container info-container">
+            <div class="info-item">
+                <span><i class="fas fa-map-marker-alt fa-white"></i></span>
+                <span><a href="/">Location</a></span>
+            </div>
+
+            <div class="info-item">
+                <span><i class="fas fa-envelope"></i></span>
+                <span><a href="/">Mail us</a></span>
+            </div>
+
+            <div class="info-item">
+                <span><i class="fas fa-key"></i></span>
+                <span><a href="/">Login</a></span>
+            </div>
+
+            <div class="info-item right">
+                <span class="search-icon"><i class="fas fa-search"></i></span>
+                <span><a href="/">DE</a></span>
+                <span>&#124;</span>
+                <span class="selected-lang"><a href="/">EN</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-navbar">
+        <div class="container navbar-container clearfix">
+            <div class="navbar-item-logo">
+                <a class="navbar-logo" href="/">Hotel</a>
+            </div>
+
+            <div class="navbar-links">
+                <div class="navbar-item">
+                    <a href="/">Home</a>
+                </div>
+            </div>
+
+            <div class="navbar-links">
+                <div class="navbar-item">
+                    <a href="/">About</a>
+                </div>
+            </div>
+
+            <div class="navbar-links">
+                <div class="navbar-item">
+                    <a href="/">Rooms</a>
+                </div>
+            </div>
+
+            <div class="navbar-links">
+                <div class="navbar-item">
+                    <a href="/">Services</a>
+                </div>
+            </div>
+
+            <div class="navbar-links">
+                <div class="navbar-item">
+                    <a href="/">Blog</a>
+                </div>
+            </div>
+
+            <div class="navbar-links">
+                <div class="navbar-item">
+                    <a href="/">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    
+{% endblock content %}

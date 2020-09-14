@@ -25,6 +25,29 @@ window.vapp = app;
 
 $(document).ready( () => {
 
-    
+    function next(element, rooms) {
+        if (element.next().length > 0) {
+            return element.next();
+        } else {
+            return rooms.first();
+        }
+    }
+
+    $(document).on('click', '#showcaseArrow',  () => {
+        let carousel = $('.carousel');
+        let rooms = $('.room-item');
+        let el = $('.ref').removeClass('ref');
+        let nextRoom = next(el, rooms);
+
+        nextRoom.addClass('ref').css('order', 1);
+        for (let i = 2; i <= rooms.length; i++) {
+            nextRoom = next(nextRoom, rooms).css('order', i);
+        }
+
+        carousel.removeClass('transition');
+        setTimeout (() => {
+            carousel.addClass('transition');
+        }, 25);
+    });
 
 });

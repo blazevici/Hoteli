@@ -24498,7 +24498,33 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 window.vapp = app;
 
-$(document).ready(function () {});
+$(document).ready(function () {
+
+    function next(element, rooms) {
+        if (element.next().length > 0) {
+            return element.next();
+        } else {
+            return rooms.first();
+        }
+    }
+
+    $(document).on('click', '#showcaseArrow', function () {
+        var carousel = $('.carousel');
+        var rooms = $('.room-item');
+        var el = $('.ref').removeClass('ref');
+        var nextRoom = next(el, rooms);
+
+        nextRoom.addClass('ref').css('order', 1);
+        for (var i = 2; i <= rooms.length; i++) {
+            nextRoom = next(nextRoom, rooms).css('order', i);
+        }
+
+        carousel.removeClass('transition');
+        setTimeout(function () {
+            carousel.addClass('transition');
+        }, 25);
+    });
+});
 
 /***/ }),
 

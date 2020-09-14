@@ -37,8 +37,30 @@ $font-text: "DM Serif Text", serif;
     }
 }
 
+@mixin carousel-style {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+@mixin tighter-container {
+    padding: 0 8rem;
+}
+
 body {
     position: relative;
+
+    a {
+        color: $button-color;
+    }
+
+    a:hover {
+        color: $button-color;
+    }
 
     .container-fluid {
         padding: 0;
@@ -183,26 +205,23 @@ body {
                             padding: 9rem 0;
                             z-index: 999;
 
-                            #arrow {
+                            #showcaseArrow {
                                 color: #FFFFFF;
                             }
 
-                            #arrow:hover {
+                            #showcaseArrow:hover {
                                 cursor: pointer;
                             }
                         }
         
                         .carousel {
-                            display: flex;
-                            flex-wrap: nowrap;
-                            flex-direction: row;
-                            list-style: none;
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
+                            @include carousel-style;
+                            //left: -100%;
+                            transform: translateX(350px);
         
                             .room-item {
-                                flex: 0 0 auto; 
+                                flex: 1 0 0%;
+                                order: 2;
                                 
                                 .room {
                                     width: 20rem;
@@ -215,6 +234,15 @@ body {
                                     }
                                 }
                             }
+
+                            .ref {
+                                order: 1;
+                            }
+                        }
+
+                        .transition {
+                            transform: none;
+                            transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
                         }
                     }
                 }
@@ -281,20 +309,16 @@ body {
             background-color: #FFFFFF;
 
             .container-jumbotron {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://s3.amazonaws.com/noupe/2009/10/baroque-pattern.jpg');
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://1.bp.blogspot.com/_ZJ-oIaOI9l8/TUiamRNUHKI/AAAAAAAAAoQ/G6IxJs_W8v4/s1600/floral-pattern-wallpaper-black-1600x1200.jpg');
                 background-repeat: repeat;
                 color: #FFFFFF !important;
                 padding: 3rem 0;
 
                 .jumbotron-text {
-                    padding: 0 10rem;
+                    @include tighter-container;
                     
                     h1 {
                         font-family: $font-text;
-                    }
-
-                    p a {
-                        color: $button-color;
                     }
 
                     p i {
@@ -305,7 +329,9 @@ body {
 
 
             .jumbotron-info {
-                padding: 1rem 10rem;
+                @include tighter-container;
+                padding-top: 1rem;
+                padding-bottom: 4rem;
 
                 .info-card {
                     display: inline-block;
@@ -334,13 +360,41 @@ body {
         }
 
         .container-news {
-            padding: 0 10rem;
+            @include tighter-container;
             position: relative;
 
             h1 {
                 font-family: $font-text;
             }
 
+            .carousel-outer {
+                margin: 1rem 0;
+
+                .carousel-container {
+
+                    .carousel-news {
+                        @include carousel-style;
+
+                        .news-item {
+                            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                            //width: 30rem;
+                            margin: 0 2rem 0 0;
+
+                            .news {
+
+
+                                .news-text {
+                                    padding: 1rem;
+
+                                    .above-header {
+                                        color: gray;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
     }

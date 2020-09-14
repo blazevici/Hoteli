@@ -92,15 +92,15 @@
 
             <div class="carousel-outer">
                 <div class="carousel-container">
-
-                    <span><i class="fas fa-chevron-left fa-2x" id="arrow"></i></span>
-                    <ul class="carousel" id="carousel-rooms">
+                    <span><i class="fas fa-chevron-left fa-2x" id="showcaseArrow"></i></span>
+                    <ul class="carousel transition" id="carousel-rooms">
 
                         {% for product in products %}
-                            <li class="room-item">
+                            {% if loop.last %}
+                            <li class="room-item ref">
                                 <div class="room">
                                     <div class="room-image">
-                                        <img class="img-fluid" src='{{ product.images.0.url }}'>
+                                        <img class="img-fluid" src='{{ product.images.0.url }}' alt="Hotel room">
                                     </div>
     
                                     <div class="room-text">
@@ -114,6 +114,25 @@
                                     </div>
                                 </div>
                             </li>
+                            {% else %}
+                            <li class="room-item">
+                                <div class="room">
+                                    <div class="room-image">
+                                        <img class="img-fluid" src='{{ product.images.0.url }}' alt="Hotel room">
+                                    </div>
+    
+                                    <div class="room-text">
+                                        <h5>{{ product.title }}</h4>
+                                        <p>
+                                            <a href="/"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fas fa-chevron-right fa-sm"></i>
+                                        </p>    
+    
+                                        <h4>{{ product.formatted_price }}</h4>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
                         {% endfor %}
 
                     </ul>
@@ -145,7 +164,7 @@
             {% for product in products %}
             <div class="apartment-card">
                 <div class="apartment-image">
-                    <img class="img-fluid" src='{{ product.images.0.url }}'>
+                    <img class="img-fluid" src='{{ product.images.0.url }}' alt="Apartment">
                 </div>
 
                 <div class="apartment-text">
@@ -210,6 +229,61 @@
     <div class="container container-news">
         <h1>Recent News</h1>
 
+        <div class="carousel-outer">
+            <div class="carousel-container">
+                <ul class="carousel-news">
+                    {% for article in news %}
+                    <li class="news-item">
+                        <div class="news">
+                            <div class="news-image">
+                                <img class="img-fluid" src='{{ article.image }}' alt="News image">
+                            </div>
+
+                            <div class="news-text">
+                                <p class="above-header">{{ article.category }}</p>
+                                <h4>{{ article.title }}</h4>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
+                                <br>
+                                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+
+                    <!--<li class="news-item">
+                        <div class="news">
+                            <div class="news-image">
+                                <img class="img-fluid" src='{{ article.image }}' alt="News image">
+                            </div>
+
+                            <div class="news-text">
+                                <p class="above-header">Hotel news</p>
+                                <h4>Lorem ipsum</h4>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
+                                <br>
+                                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="news-item">
+                        <div class="news">
+                            <div class="news-image">
+                                <img class="img-fluid" src='{{ article.image }}' alt="News image">
+                            </div>
+
+                            <div class="news-text">
+                                <p class="above-header">Hotel news</p>
+                                <h4>Lorem ipsum</h4>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
+                                <br>
+                                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
+                            </div>
+                        </div>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
     </div>
 
     

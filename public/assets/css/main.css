@@ -4588,6 +4588,14 @@ body {
   position: relative;
 }
 
+body a {
+  color: #9B6333;
+}
+
+body a:hover {
+  color: #9B6333;
+}
+
 body .container-fluid {
   padding: 0;
   margin: 0;
@@ -4738,11 +4746,11 @@ body .container-fluid .background-photo .container-fluid .carousel-outer .carous
   z-index: 999;
 }
 
-body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span #arrow {
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span #showcaseArrow {
   color: #FFFFFF;
 }
 
-body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span #arrow:hover {
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span #showcaseArrow:hover {
   cursor: pointer;
 }
 
@@ -4760,12 +4768,17 @@ body .container-fluid .background-photo .container-fluid .carousel-outer .carous
   margin: 0;
   padding: 0;
   position: relative;
+  -webkit-transform: translateX(350px);
+          transform: translateX(350px);
 }
 
 body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item .room {
@@ -4790,6 +4803,21 @@ body .container-fluid .background-photo .container-fluid .carousel-outer .carous
   top: 0;
   padding: 2rem 1rem 2rem 0;
   font-weight: bold;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .ref {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .transition {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition: -webkit-transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
+  transition: -webkit-transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
+  transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
+  transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1), -webkit-transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
 }
 
 body .container-fluid .container-info {
@@ -4863,23 +4891,19 @@ body .container-fluid .jumbotron {
 }
 
 body .container-fluid .jumbotron .container-jumbotron {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("https://s3.amazonaws.com/noupe/2009/10/baroque-pattern.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://s3.amazonaws.com/noupe/2009/10/baroque-pattern.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("https://1.bp.blogspot.com/_ZJ-oIaOI9l8/TUiamRNUHKI/AAAAAAAAAoQ/G6IxJs_W8v4/s1600/floral-pattern-wallpaper-black-1600x1200.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://1.bp.blogspot.com/_ZJ-oIaOI9l8/TUiamRNUHKI/AAAAAAAAAoQ/G6IxJs_W8v4/s1600/floral-pattern-wallpaper-black-1600x1200.jpg");
   background-repeat: repeat;
   color: #FFFFFF !important;
   padding: 3rem 0;
 }
 
 body .container-fluid .jumbotron .container-jumbotron .jumbotron-text {
-  padding: 0 10rem;
+  padding: 0 8rem;
 }
 
 body .container-fluid .jumbotron .container-jumbotron .jumbotron-text h1 {
   font-family: "DM Serif Text", serif;
-}
-
-body .container-fluid .jumbotron .container-jumbotron .jumbotron-text p a {
-  color: #9B6333;
 }
 
 body .container-fluid .jumbotron .container-jumbotron .jumbotron-text p i {
@@ -4887,7 +4911,9 @@ body .container-fluid .jumbotron .container-jumbotron .jumbotron-text p i {
 }
 
 body .container-fluid .jumbotron .jumbotron-info {
-  padding: 1rem 10rem;
+  padding: 0 8rem;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
 }
 
 body .container-fluid .jumbotron .jumbotron-info .info-card {
@@ -4915,11 +4941,45 @@ body .container-fluid .jumbotron .jumbotron-info .info-card .info-text hr {
 }
 
 body .container-fluid .container-news {
-  padding: 0 10rem;
+  padding: 0 8rem;
   position: relative;
 }
 
 body .container-fluid .container-news h1 {
   font-family: "DM Serif Text", serif;
+}
+
+body .container-fluid .container-news .carousel-outer {
+  margin: 1rem 0;
+}
+
+body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 0 2rem 0 0;
+}
+
+body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text {
+  padding: 1rem;
+}
+
+body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text .above-header {
+  color: gray;
 }
 

@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
+window.$ = window.jQuery = require('jquery');
+
 Vue.component('v-application', require('./components/app.vue'))
 
 Vue.component('v-container', require('./components/container.vue'))
@@ -20,3 +22,9 @@ const app = new Vue({
 });
 
 window.vapp = app;
+
+$(document).ready( () => {
+
+    
+
+});

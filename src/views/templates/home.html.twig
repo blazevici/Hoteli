@@ -72,9 +72,145 @@
             </div>
         </div>
     </div>
-{% endblock %}
+{% endblock header %}
 
 
 {% block content %}
+    <div class='background-photo' style='background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ products.0.images.0.url }})'>
+        <div class="container-fluid">
+            <div class="background-info container">
+                <h1>Feel like home, but better.</h1>
+                <p>World famous. Deeply relaxing.</p>
+                <a href="/"><button class="btn button-design">LEARN MORE</button></a>
+
+                <div class="social-info">
+                    <h5>
+                        Follow us &nbsp;&nbsp; <a href="/"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;&nbsp;<a href="/"><i class="fab fa-instagram"></i></a>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="carousel-outer">
+                <div class="carousel-container">
+
+                    <span><i class="fas fa-chevron-left fa-2x" id="arrow"></i></span>
+                    <ul class="carousel" id="carousel-rooms">
+
+                        {% for product in products %}
+                            <li class="room-item">
+                                <div class="room">
+                                    <div class="room-image">
+                                        <img class="img-fluid" src='{{ product.images.0.url }}'>
+                                    </div>
+    
+                                    <div class="room-text">
+                                        <h5>{{ product.title }}</h4>
+                                        <p>
+                                            <a href="/"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fas fa-chevron-right fa-sm"></i>
+                                        </p>    
+    
+                                        <h4>{{ product.formatted_price }}</h4>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container container-info">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Comfort & Design to relax in Luxury Hotel</h1>
+                <p><b>Every day is a new day for relaxation.</b></p>
+                <a href="/"><button class="btn button-design">ABOUT US</button></a>
+            </div>
+
+            <div class="col-sm">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, nostrum esse beatae voluptates consequatur atque magnam officia, nemo asperiores perspiciatis placeat omnis? Nisi itaque impedit ea, minima blanditiis aperiam dolor.</p>
+                <p><b>John Johnson</b> <br> General manager</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-apartments">
+        <h1>Best Apartments</h1>
+
+        <div class="row">
+            {% for product in products %}
+            <div class="apartment-card">
+                <div class="apartment-image">
+                    <img class="img-fluid" src='{{ product.images.0.url }}'>
+                </div>
+
+                <div class="apartment-text">
+                    <h5>{{ product.title }}</h4>
+                    <p>
+                        <a href="/"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fas fa-chevron-right fa-sm"></i>
+                    </p>    
+                    <h4>{{ product.formatted_price }}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container-fluid jumbotron">
+        <div class="container-jumbotron">
+            <div class="container jumbotron-text">
+                <h1>Excellent service</h1>
+                <p><b>Every day is a new day for relaxation.</b></p>
+    
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, minus explicabo? Inventore, nemo. Optio voluptatum cupiditate adipisci, harum voluptates veritatis necessitatibus libero impedit nesciunt. Dignissimos esse enim consequatur pariatur veniam.</p>
+
+                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
+            </div>
+        </div>
+
+        <div class="container jumbotron-info">
+            <div class="info-card">
+                <i class="fas fa-bed fa-2x"></i>
+                <span></span>
+
+                <div class="info-text">
+                    <h5>Orthopedic beds</h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <i class="fas fa-utensils fa-2x"></i>
+
+                <div class="info-text">
+                    <h5>Extraordinary cousine</h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <i class="fas fa-coffee fa-2x"></i>
+
+                <div class="info-text">
+                    <h5>Custom coffee</h5>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-news">
+        <h1>Recent News</h1>
+
+    </div>
+
     
 {% endblock content %}

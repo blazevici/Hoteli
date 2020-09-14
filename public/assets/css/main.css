@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Lora:wght@600;
-
-700&display=swap);/*!
+@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text&display=swap);/*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -4586,9 +4584,17 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+body {
+  position: relative;
+}
+
 body .container-fluid {
   padding: 0;
   margin: 0;
+}
+
+body .container-fluid .container {
+  padding: 0;
 }
 
 body .container-fluid .header-info {
@@ -4640,7 +4646,7 @@ body .container-fluid .header-navbar .navbar-container .navbar-item-logo {
 
 body .container-fluid .header-navbar .navbar-container .navbar-item-logo .navbar-logo {
   font-size: 2.25rem;
-  font-family: "Lora", serif;
+  font-family: "DM Serif Display", serif;
   font-weight: 700;
   color: #FFFFFF !important;
 }
@@ -4660,5 +4666,260 @@ body .container-fluid .header-navbar .navbar-container .navbar-links .navbar-ite
 
 body .container-fluid .header-navbar .navbar-container .navbar-links .navbar-item a {
   color: #FFFFFF !important;
+}
+
+body .container-fluid .background-photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+body .container-fluid .background-photo .container-fluid {
+  margin: auto;
+  padding: 0 0 2rem 0;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info {
+  padding: 0;
+  position: relative;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info h1 {
+  padding-top: 10rem;
+  font-size: 2.25rem;
+  font-family: "DM Serif Text", serif;
+  color: #FFFFFF !important;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info p {
+  color: #FFFFFF !important;
+  font-weight: 500;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info button {
+  background-color: #9B6333;
+  color: #FFFFFF;
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info .social-info {
+  position: absolute;
+  bottom: -23rem;
+  left: 0;
+  z-index: 999;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info .social-info i {
+  color: #FFFFFF;
+}
+
+body .container-fluid .background-photo .container-fluid .background-info .social-info h5 {
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer {
+  padding-top: 2rem;
+  padding-left: 45%;
+  overflow: hidden;
+  position: relative;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container {
+  display: inline-block;
+  position: relative;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span {
+  position: absolute;
+  left: -2rem;
+  padding: 9rem 0;
+  z-index: 999;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span #arrow {
+  color: #FFFFFF;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container span #arrow:hover {
+  cursor: pointer;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item .room {
+  width: 20rem;
+  margin: 0 1rem;
+  background-color: #FFFFFF;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item .room .room-text {
+  padding: 1.2rem 1.2rem 0.2rem 1.2rem;
+  position: relative;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item .room .room-text p a,
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item .room .room-text p i {
+  color: #9B6333;
+}
+
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel .room-item .room .room-text h4 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2rem 1rem 2rem 0;
+  font-weight: bold;
+}
+
+body .container-fluid .container-info {
+  padding: 3rem 0;
+}
+
+body .container-fluid .container-info .row .col-sm h1 {
+  font-family: "DM Serif Text", serif;
+}
+
+body .container-fluid .container-info .row .col-sm button {
+  background-color: #9B6333;
+  color: #FFFFFF;
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+}
+
+body .container-fluid .container-info .row .col-sm .name {
+  font-weight: bold;
+}
+
+body .container-fluid .container-apartments {
+  margin-bottom: 3rem;
+}
+
+body .container-fluid .container-apartments h1 {
+  font-family: "DM Serif Text", serif;
+  margin-bottom: 2rem;
+}
+
+body .container-fluid .container-apartments .row {
+  margin: 0;
+}
+
+body .container-fluid .container-apartments .row .apartment-card {
+  display: inline-block;
+  width: 22%;
+  margin: 0 2rem 2rem 0;
+  background-color: #f2f2f2;
+}
+
+body .container-fluid .container-apartments .row .apartment-card .apartment-text {
+  padding: 1.2rem 1.2rem 0.2rem 1.2rem;
+  position: relative;
+  font-size: 0.8rem !important;
+}
+
+body .container-fluid .container-apartments .row .apartment-card .apartment-text p a,
+body .container-fluid .container-apartments .row .apartment-card .apartment-text p i {
+  color: #9B6333;
+}
+
+body .container-fluid .container-apartments .row .apartment-card .apartment-text h4 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 2rem 1rem 2rem 0;
+  font-weight: bold;
+}
+
+body .container-fluid .container-apartments .row .apartment-card .apartment-text h5 {
+  font-size: 1.1rem;
+}
+
+body .container-fluid .container-apartments .row .apartment-card .apartment-text h4 {
+  font-size: 1.3rem;
+}
+
+body .container-fluid .jumbotron {
+  background-color: #FFFFFF;
+}
+
+body .container-fluid .jumbotron .container-jumbotron {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("https://s3.amazonaws.com/noupe/2009/10/baroque-pattern.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://s3.amazonaws.com/noupe/2009/10/baroque-pattern.jpg");
+  background-repeat: repeat;
+  color: #FFFFFF !important;
+  padding: 3rem 0;
+}
+
+body .container-fluid .jumbotron .container-jumbotron .jumbotron-text {
+  padding: 0 10rem;
+}
+
+body .container-fluid .jumbotron .container-jumbotron .jumbotron-text h1 {
+  font-family: "DM Serif Text", serif;
+}
+
+body .container-fluid .jumbotron .container-jumbotron .jumbotron-text p a {
+  color: #9B6333;
+}
+
+body .container-fluid .jumbotron .container-jumbotron .jumbotron-text p i {
+  color: #9B6333;
+}
+
+body .container-fluid .jumbotron .jumbotron-info {
+  padding: 1rem 10rem;
+}
+
+body .container-fluid .jumbotron .jumbotron-info .info-card {
+  display: inline-block;
+  max-width: 30%;
+  padding: 0 1rem 0 0;
+}
+
+body .container-fluid .jumbotron .jumbotron-info .info-card i {
+  margin-bottom: 0.5rem;
+  border-radius: 100px;
+  background-color: #f0ece7;
+  width: 70px;
+}
+
+body .container-fluid .jumbotron .jumbotron-info .info-card .info-text {
+  padding: 0.5rem;
+  background-color: #f2f2f2 !important;
+}
+
+body .container-fluid .jumbotron .jumbotron-info .info-card .info-text hr {
+  border: 1px solid #9B6333;
+  width: 50%;
+  margin-left: 0;
+}
+
+body .container-fluid .container-news {
+  padding: 0 10rem;
+  position: relative;
+}
+
+body .container-fluid .container-news h1 {
+  font-family: "DM Serif Text", serif;
 }
 

@@ -1,19 +1,52 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text&display=swap');
 
 $header-info-color: #F0ECE7;
 $header-color: #272525;
 $button-color: #9B6333;
+$secondary-color: #f2f2f2;
 $font-color: #000000;
 
-$font-logo: "Lora", serif;
+$font-logo: "DM Serif Display", serif;
+$font-text: "DM Serif Text", serif;
 
+@mixin button-design {
+    background-color: $button-color;
+    color: #FFFFFF;
+    padding: 0.7rem 1.5rem;
+    border-radius: 100px;
+}
+
+@mixin room-text {
+    padding: 1.2rem 1.2rem 0.2rem 1.2rem;
+    position: relative;
+
+    p {
+
+        a, i {
+            color: $button-color;
+        }
+    }
+
+    h4 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 2rem 1rem 2rem 0;
+        font-weight: bold;
+    }
+}
 
 body {
+    position: relative;
 
     .container-fluid {
         padding: 0;
         margin: 0;
+
+        .container {
+            padding: 0;
+        }
 
         .header-info {
             background: $header-info-color;
@@ -63,7 +96,6 @@ body {
                         font-size: 2.25rem;
                         font-family: $font-logo;
                         font-weight: 700;
-
                         color: #FFFFFF !important;
                     }
 
@@ -87,6 +119,232 @@ body {
                 }
             }
         }
+
+
+        .background-photo {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+
+            .container-fluid {
+                margin: auto;
+                padding: 0 0 2rem 0;
+
+                .background-info {
+                    padding: 0;
+                    position: relative;
+
+                    h1 {
+                        padding-top: 10rem;
+                        font-size: 2.25rem;
+                        font-family: $font-text;
+                        color: #FFFFFF !important;
+                    }
+    
+                    p {
+                        color: #FFFFFF !important;
+                        font-weight: 500;
+                    }
+    
+                    button {
+                        @include button-design;
+                    }
+
+                    .social-info {
+                        position: absolute;
+                        bottom: -23rem;
+                        left: 0;
+                        z-index: 999;
+                        
+                        i {
+                            color: #FFFFFF;
+                        }
+    
+                        h5 {
+                            color: #FFFFFF;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                
+                .carousel-outer {
+                    padding-top: 2rem;
+                    padding-left: 45%;
+                    overflow: hidden;
+                    position: relative;
+    
+                    .carousel-container {
+                        display: inline-block;
+                        position: relative;
+
+                        span {
+                            position: absolute;
+                            left: -2rem;
+                            padding: 9rem 0;
+                            z-index: 999;
+
+                            #arrow {
+                                color: #FFFFFF;
+                            }
+
+                            #arrow:hover {
+                                cursor: pointer;
+                            }
+                        }
+        
+                        .carousel {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            flex-direction: row;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+        
+                            .room-item {
+                                flex: 0 0 auto; 
+                                
+                                .room {
+                                    width: 20rem;
+                                    margin: 0 1rem;
+                                    background-color: #FFFFFF;
+                                
+
+                                    .room-text {
+                                        @include room-text;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .container-info {
+            padding: 3rem 0;
+
+            .row {
+
+                .col-sm {
+
+                    h1 {
+                        font-family: $font-text;
+                    }
+
+                    button {
+                        @include button-design;
+                    }
+
+                    .name {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .container-apartments {
+            margin-bottom: 3rem;
+
+            h1 {
+                font-family: $font-text;
+                margin-bottom: 2rem;
+            }
+
+            .row {
+                margin: 0;
+
+                .apartment-card {
+                    display: inline-block;
+                    width: 22%;
+                    margin: 0 2rem 2rem 0;
+                    background-color: $secondary-color;
+
+                    .apartment-text {
+                        @include room-text;
+
+                        font-size: 0.8rem !important;
+
+                        h5 {
+                            font-size: 1.1rem;
+                        }
+
+                        h4 {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .jumbotron {
+            background-color: #FFFFFF;
+
+            .container-jumbotron {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://s3.amazonaws.com/noupe/2009/10/baroque-pattern.jpg');
+                background-repeat: repeat;
+                color: #FFFFFF !important;
+                padding: 3rem 0;
+
+                .jumbotron-text {
+                    padding: 0 10rem;
+                    
+                    h1 {
+                        font-family: $font-text;
+                    }
+
+                    p a {
+                        color: $button-color;
+                    }
+
+                    p i {
+                        color: $button-color;
+                    }
+                }
+            }
+
+
+            .jumbotron-info {
+                padding: 1rem 10rem;
+
+                .info-card {
+                    display: inline-block;
+                    max-width: 30%;
+                    padding: 0 1rem 0 0;
+
+                    i {
+                        margin-bottom: 0.5rem;
+                        border-radius: 100px;
+                        background-color: rgb(240, 236, 231);
+                        width: 70px;
+                    }
+
+                    .info-text {
+                        padding: 0.5rem;
+                        background-color: $secondary-color !important;
+                        
+                        hr {
+                            border: 1px solid $button-color;
+                            width: 50%;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container-news {
+            padding: 0 10rem;
+            position: relative;
+
+            h1 {
+                font-family: $font-text;
+            }
+
+        }
+
     }
+
+        
     
 }

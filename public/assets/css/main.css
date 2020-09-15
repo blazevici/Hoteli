@@ -4586,6 +4586,12 @@ readers do not read off random characters that represent icons */
   font-weight: 900; }
 body {
   position: relative;
+  /* 
+        GENERAL --------------------------
+    */
+  /*
+        HEADER CSS -------------------------------
+    */
 }
 
 body a {
@@ -4596,10 +4602,17 @@ body a:hover {
   color: #9B6333;
 }
 
-body .btn:active {
-  -webkit-box-shadow: 1px 1px 5px #9B6333 !important;
-          box-shadow: 1px 1px 5px #9B6333 !important;
-  outline: 0px !important;
+body .btn:visited {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  outline: thick #9B6333 !important;
+}
+
+body .btn:active,
+body .btn:focus {
+  -webkit-box-shadow: 0px 0px 5px #9B6333 !important;
+          box-shadow: 0px 0px 5px #9B6333 !important;
+  outline: none !important;
 }
 
 body .colored-bg {
@@ -4615,6 +4628,27 @@ body .colored-bg-reverse {
 body .container-fluid {
   padding: 0;
   margin: 0;
+  /*
+            BIG BACKGROUND PHOTO & SLIDER CSS ---------------------------------
+        */
+  /*
+            HOTEL INFO & BEST APARTMENTS CSS ---------------------------------
+        */
+  /*
+            JUMBOTRON PATTERN BACKGROUND CONTENT CSS -------------------------------
+        */
+  /*
+            NEWS CONTENT CSS -------------------------------------
+        */
+  /*
+            CONTENT BETWEEN NEWS AND REVIEW CSS ------------------------------------------
+        */
+  /*
+            REVIEWS CONTENT CSS -------------------------------------------
+        */
+  /*
+            FOOTER CSS ---------------------------------------
+        */
 }
 
 body .container-fluid .container {
@@ -4700,7 +4734,7 @@ body .container-fluid .background-photo {
 
 body .container-fluid .background-photo .container-fluid {
   margin: auto;
-  padding: 0 0 2rem 0;
+  padding: 0 0 3rem 0;
 }
 
 body .container-fluid .background-photo .container-fluid .background-info {

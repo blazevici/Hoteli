@@ -56,6 +56,10 @@ $font-text: "DM Serif Text", serif;
 body {
     position: relative;
 
+
+    /* 
+        GENERAL --------------------------
+    */
     a {
         color: $button-color;
     }
@@ -64,9 +68,14 @@ body {
         color: $button-color;
     }
 
-    .btn:active {
-        box-shadow: 1px 1px 5px $button-color !important;
-        outline: 0px !important;
+    .btn:visited {
+        box-shadow: none !important;
+        outline: thick $button-color !important;
+    }
+
+    .btn:active, .btn:focus {
+        box-shadow: 0px 0px 5px $button-color !important;
+        outline: none !important;
     }
 
     .colored-bg {
@@ -77,6 +86,10 @@ body {
         background: linear-gradient(to bottom, $secondary-color 50%, #FFFFFF 50%);
     }
 
+
+    /*
+        HEADER CSS -------------------------------
+    */
     .container-fluid {
         padding: 0;
         margin: 0;
@@ -158,6 +171,9 @@ body {
         }
 
 
+        /*
+            BIG BACKGROUND PHOTO & SLIDER CSS ---------------------------------
+        */
         .background-photo {
             background-repeat: no-repeat;
             background-size: cover;
@@ -165,7 +181,7 @@ body {
 
             .container-fluid {
                 margin: auto;
-                padding: 0 0 2rem 0;
+                padding: 0 0 3rem 0;
 
                 .background-info {
                     padding: 0;
@@ -264,6 +280,10 @@ body {
             }
         }
 
+
+        /*
+            HOTEL INFO & BEST APARTMENTS CSS ---------------------------------
+        */
         .container-info {
             padding: 3rem 0;
 
@@ -320,6 +340,10 @@ body {
             }
         }
 
+
+        /*
+            JUMBOTRON PATTERN BACKGROUND CONTENT CSS -------------------------------
+        */
         .jumbotron {
             background-color: #FFFFFF;
 
@@ -374,6 +398,10 @@ body {
             }
         }
 
+
+        /*
+            NEWS CONTENT CSS -------------------------------------
+        */
         .container-news {
             @include tighter-container;
             position: relative;
@@ -462,6 +490,10 @@ body {
             }
         }
 
+
+        /*
+            CONTENT BETWEEN NEWS AND REVIEW CSS ------------------------------------------
+        */
         .additional-outer {
             position: relative;
             margin-bottom: 3rem;
@@ -506,6 +538,9 @@ body {
         }
 
 
+        /*
+            REVIEWS CONTENT CSS -------------------------------------------
+        */
         .container-reviews {
             @include tighter-container;
 
@@ -598,6 +633,9 @@ body {
         }
 
 
+        /*
+            FOOTER CSS ---------------------------------------
+        */
         .footer {
             background-color: $header-color;
             color: #FFFFFF !important;

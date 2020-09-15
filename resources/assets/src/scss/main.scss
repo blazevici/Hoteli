@@ -3,8 +3,10 @@
 
 $header-info-color: #F0ECE7;
 $header-color: #272525;
+$footer-secondary-color: #1d1d1d;
 $button-color: #9B6333;
 $secondary-color: #f2f2f2;
+$rating-color: #9e6739;
 $font-color: #000000;
 
 $font-logo: "DM Serif Display", serif;
@@ -60,6 +62,19 @@ body {
 
     a:hover {
         color: $button-color;
+    }
+
+    .btn:active {
+        box-shadow: 1px 1px 5px $button-color !important;
+        outline: 0px !important;
+    }
+
+    .colored-bg {
+        background: linear-gradient(to bottom, #FFFFFF 50%, $secondary-color 50%);
+    }
+
+    .colored-bg-reverse {
+        background: linear-gradient(to bottom, $secondary-color 50%, #FFFFFF 50%);
     }
 
     .container-fluid {
@@ -214,13 +229,13 @@ body {
                             }
                         }
         
-                        .carousel {
+                        .carousel-rooms {
                             @include carousel-style;
                             //left: -100%;
                             transform: translateX(350px);
         
                             .room-item {
-                                flex: 1 0 0%;
+                                flex: 1 0 350px;
                                 order: 2;
                                 
                                 .room {
@@ -235,7 +250,7 @@ body {
                                 }
                             }
 
-                            .ref {
+                            .ref-rooms {
                                 order: 1;
                             }
                         }
@@ -362,6 +377,7 @@ body {
         .container-news {
             @include tighter-container;
             position: relative;
+            overflow: hidden;
 
             h1 {
                 font-family: $font-text;
@@ -369,34 +385,305 @@ body {
 
             .carousel-outer {
                 margin: 1rem 0;
+                position: relative;
+
+                #newsLeftArrow {
+                    position: absolute;
+                    left: -3rem;
+                    top: 16rem;
+                    cursor: pointer;
+                    z-index: 999;
+                }
+
+                #newsRightArrow {
+                    position: absolute;
+                    right: -2rem;
+                    top: 16rem;
+                    cursor: pointer;
+                    z-index: 999;
+                }
 
                 .carousel-container {
+                    max-width: 56rem;
+                    overflow: hidden;
+                    margin: -1rem;
 
                     .carousel-news {
                         @include carousel-style;
+                        transform: translate(50%);
+                        left: -50%;
 
                         .news-item {
-                            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-                            //width: 30rem;
-                            margin: 0 2rem 0 0;
+                            max-width: 28rem;
+                            padding: 1rem;
+                            flex: 1 0 50%;
+                            order: 2;
+                            min-height: 100%;
 
                             .news {
+                                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                                background-color: #FFFFFF;
 
+                                .news-image > img {
+                                    width: 28rem;
+                                    height: 14rem;
+                                    vertical-align: top;
+                                    object-fit: cover;
+                                }
 
                                 .news-text {
-                                    padding: 1rem;
+                                    padding: 1rem 1rem 0.5rem 1rem;
 
                                     .above-header {
                                         color: gray;
                                     }
+
+                                    p i {
+                                        color: $button-color;
+                                    }
                                 }
                             }
                         }
+
+                        .ref-news {
+                            order: 1;
+                        }
+                    }
+
+                    .transition-reverse {
+                        transform: translateX(-50%);
+                    }
+
+                    .transition {
+                        transform: none;
+                        transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
                     }
                 }
             }
         }
 
+        .additional-outer {
+            position: relative;
+            margin-bottom: 3rem;
+
+            .image-container {
+                display: inline-block;
+
+                .content-image {
+                    object-fit: cover;
+                }
+            }
+
+            .additional-content {
+                overflow: hidden;
+                @include tighter-container;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+    
+                .content-container {
+                    padding: 5rem 0 5rem 10rem;
+                    margin-right: 1rem;
+    
+                    .text-container {
+                        background-color: #FFFFFF;
+                        padding: 2rem 4rem;
+                        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+                        h1 {
+                            font-family: $font-text;
+                        }
+
+                        .button-design {
+                            @include button-design;
+                            margin-top: 2rem;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+
+        .container-reviews {
+            @include tighter-container;
+
+            h1 {
+                font-family: $font-text;
+            }
+
+            .carousel-outer {
+                position: relative;
+                margin-bottom: 3rem;
+                
+                #reviewLeftArrow {
+                    position: absolute;
+                    left: -4rem;
+                    top: 6rem;
+                    cursor: pointer;
+                    z-index: 999;
+                }
+
+                #reviewRightArrow {
+                    position: absolute;
+                    right: -2rem;
+                    top: 6rem;
+                    cursor: pointer;
+                    z-index: 999;
+                }
+                
+                .carousel-container {
+                    max-width: 56rem;
+                    overflow: hidden;
+    
+                    .carousel-reviews {
+                        @include carousel-style;
+                        transform: translate(50%);
+                        left: -50%;
+
+                        .review-item {
+                            margin-top: 1rem;
+                            padding-right: 2rem;
+                            max-width: 28rem;
+                            flex: 1 0 50%;
+                            order: 2;
+                            min-height: 100%;
+
+                            .profile-container > * {
+                                display: inline-block;
+                            }
+
+                            .profile-container {
+                                background-color: $header-info-color;
+                                border-radius: 70px;
+
+                                img {
+                                    object-fit: cover;
+                                    border-radius: 50%;
+                                }
+
+                                p {
+                                    padding: 0 3rem 0 1rem;
+                                }
+
+                                .rating-container i {
+                                    color: $rating-color;
+                                }
+                            }
+
+                            .review-container {
+
+                                p {
+                                    padding: 1rem 0 0 6rem;
+                                }
+                            }
+                        }
+
+                        .ref-review {
+                            order: 1;
+                        }
+                    }
+
+                    .transition-reverse {
+                        transform: translateX(-50%);
+                    }
+
+                    .transition {
+                        transform: none;
+                        transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
+                    }
+                }
+            }
+        }
+
+
+        .footer {
+            background-color: $header-color;
+            color: #FFFFFF !important;
+            font-size: 0.9rem;
+
+            .footer-info {
+                @include tighter-container;
+
+                h1 {
+                    font-family: $font-text;
+                }
+
+                .row {
+                    margin: 0;
+
+                    .col-sm {
+                        padding: 3rem 0 1.5rem 0;
+    
+                        p a {
+                            color: #FFFFFF;
+                        }
+    
+                        .subscribe-form {
+    
+                            button {
+                                background-color: rgba(74, 74, 74, 1);
+                                border-radius: 100px;
+                                display: block;
+                                color: #FFFFFF;
+                                margin-top: 1rem;
+                                margin-left: 5rem;
+                                max-width: 120px;
+                                font-size: 0.8rem;
+                                letter-spacing: 0.05rem;
+                            }
+                        }
+    
+                        .email-input {
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 2px solid gray;
+                            color: #FFFFFF;
+                            border-radius: 0;
+                        }
+    
+                        .email-input:focus {
+                            outline: none;
+                            border-bottom: 3px solid gray;
+                        }
+    
+                        .social-info {
+                            padding-top: 3rem;
+    
+                            a {
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ending-footer {
+                background-color: $footer-secondary-color;
+
+                .ending-footer-content > * {
+                    display: inline-block;
+                }
+
+                .ending-footer-content {
+                    padding: 0.5rem 0;
+                    font-size: 0.8rem;
+
+                    p {
+                        margin: 0;
+                    }
+
+                    a {
+                        color: #FFFFFF;
+                    }
+
+                    .footer-legal {
+                        margin-left: 25rem;
+                    }
+                }
+            }
+        }
     }
 
         

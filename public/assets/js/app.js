@@ -24500,29 +24500,77 @@ window.vapp = app;
 
 $(document).ready(function () {
 
-    function next(element, rooms) {
+    function next(element, items) {
         if (element.next().length > 0) {
             return element.next();
         } else {
-            return rooms.first();
+            return items.first();
         }
     }
 
-    $(document).on('click', '#showcaseArrow', function () {
-        var carousel = $('.carousel');
-        var rooms = $('.room-item');
-        var el = $('.ref').removeClass('ref');
-        var nextRoom = next(el, rooms);
+    function previous(element, items) {
+        if (element.prev().length > 0) {
+            return element.prev();
+        } else {
+            return items.last();
+        }
+    }
 
-        nextRoom.addClass('ref').css('order', 1);
-        for (var i = 2; i <= rooms.length; i++) {
-            nextRoom = next(nextRoom, rooms).css('order', i);
+    function carouselMove(carousel, nextElement, items) {
+        for (var i = 2; i <= items.length; i++) {
+            nextElement = next(nextElement, items).css('order', i);
         }
 
         carousel.removeClass('transition');
         setTimeout(function () {
             carousel.addClass('transition');
         }, 25);
+    }
+
+    $(document).on('click', '#showcaseArrow', function () {
+        var carousel = $('.carousel-rooms');
+        var rooms = $('.room-item');
+        var el = $('.ref-rooms').removeClass('ref-rooms');
+        var nextRoom = next(el, rooms);
+
+        nextRoom.addClass('ref-rooms').css('order', 1);
+        carouselMove(carousel, nextRoom, rooms);
+    });
+
+    $(document).on('click', ".newsArrows", function (e) {
+        var carousel = $('.carousel-news');
+        var news = $('.news-item');
+        var el = $('.ref-news').removeClass('ref-news');
+        var nextArticle = void 0;
+
+        if ($(e.currentTarget).data('toggle') == 'next') {
+            nextArticle = next(el, news);
+            carousel.removeClass('transition-reverse');
+        } else {
+            nextArticle = previous(el, news);
+            carousel.addClass('transition-reverse');
+        }
+
+        nextArticle.addClass('ref-news').css('order', 1);
+        carouselMove(carousel, nextArticle, news);
+    });
+
+    $(document).on('click', ".reviewArrows", function (e) {
+        var carousel = $('.carousel-reviews');
+        var review = $('.review-item');
+        var el = $('.ref-review').removeClass('ref-review');
+        var nextReview = void 0;
+
+        if ($(e.currentTarget).data('toggle') == 'next') {
+            nextReview = next(el, review);
+            carousel.removeClass('transition-reverse');
+        } else {
+            nextReview = previous(el, review);
+            carousel.addClass('transition-reverse');
+        }
+
+        nextReview.addClass('ref-review').css('order', 1);
+        carouselMove(carousel, nextReview, review);
     });
 });
 

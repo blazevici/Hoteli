@@ -3,75 +3,77 @@
 {% block title %}Hoteli{% endblock %}
 
 {% block header %}
-    <div class="header-info">
-        <div class="container info-container">
-            <div class="info-item">
-                <span><i class="fas fa-map-marker-alt fa-white"></i></span>
-                <span><a href="/">Location</a></span>
-            </div>
-
-            <div class="info-item">
-                <span><i class="fas fa-envelope"></i></span>
-                <span><a href="/">Mail us</a></span>
-            </div>
-
-            <div class="info-item">
-                <span><i class="fas fa-key"></i></span>
-                <span><a href="/">Login</a></span>
-            </div>
-
-            <div class="info-item right">
-                <span class="search-icon"><i class="fas fa-search"></i></span>
-                <span><a href="/">DE</a></span>
-                <span>&#124;</span>
-                <span class="selected-lang"><a href="/">EN</a></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="header-navbar">
-        <div class="container navbar-container clearfix">
-            <div class="navbar-item-logo">
-                <a class="navbar-logo" href="/">Hotel</a>
-            </div>
-
-            <div class="navbar-links">
-                <div class="navbar-item">
-                    <a href="/">Home</a>
+    <header>
+        <div class="header-info">
+            <div class="container info-container">
+                <div class="info-item">
+                    <span><i class="fas fa-map-marker-alt fa-white"></i></span>
+                    <span><a href="/">Location</a></span>
                 </div>
-            </div>
-
-            <div class="navbar-links">
-                <div class="navbar-item">
-                    <a href="/">About</a>
+    
+                <div class="info-item">
+                    <span><i class="fas fa-envelope"></i></span>
+                    <span><a href="/">Mail us</a></span>
                 </div>
-            </div>
-
-            <div class="navbar-links">
-                <div class="navbar-item">
-                    <a href="/">Rooms</a>
+    
+                <div class="info-item">
+                    <span><i class="fas fa-key"></i></span>
+                    <span><a href="/">Login</a></span>
                 </div>
-            </div>
-
-            <div class="navbar-links">
-                <div class="navbar-item">
-                    <a href="/">Services</a>
-                </div>
-            </div>
-
-            <div class="navbar-links">
-                <div class="navbar-item">
-                    <a href="/">Blog</a>
-                </div>
-            </div>
-
-            <div class="navbar-links">
-                <div class="navbar-item">
-                    <a href="/">Contact</a>
+    
+                <div class="info-item right">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <span><a href="/">DE</a></span>
+                    <span>&#124;</span>
+                    <span class="selected-lang"><a href="/">EN</a></span>
                 </div>
             </div>
         </div>
-    </div>
+    
+        <div class="header-navbar">
+            <div class="container navbar-container clearfix">
+                <div class="navbar-item-logo">
+                    <a class="navbar-logo" href="/">Hotel</a>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Home</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">About</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Rooms</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Services</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Blog</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 {% endblock header %}
 
 
@@ -93,11 +95,11 @@
             <div class="carousel-outer">
                 <div class="carousel-container">
                     <span><i class="fas fa-chevron-left fa-2x" id="showcaseArrow"></i></span>
-                    <ul class="carousel transition" id="carousel-rooms">
+                    <ul class="carousel-rooms transition" id="carousel-rooms">
 
                         {% for product in products %}
                             {% if loop.last %}
-                            <li class="room-item ref">
+                            <li class="room-item ref-rooms">
                                 <div class="room">
                                     <div class="room-image">
                                         <img class="img-fluid" src='{{ product.images.0.url }}' alt="Hotel room">
@@ -106,7 +108,7 @@
                                     <div class="room-text">
                                         <h5>{{ product.title }}</h4>
                                         <p>
-                                            <a href="/"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="/room/{{ product.slug }}"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <i class="fas fa-chevron-right fa-sm"></i>
                                         </p>    
     
@@ -124,7 +126,7 @@
                                     <div class="room-text">
                                         <h5>{{ product.title }}</h4>
                                         <p>
-                                            <a href="/"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="/room/{{ product.slug }}"><b>View details</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <i class="fas fa-chevron-right fa-sm"></i>
                                         </p>    
     
@@ -226,65 +228,253 @@
         </div>
     </div>
 
-    <div class="container container-news">
-        <h1>Recent News</h1>
-
-        <div class="carousel-outer">
-            <div class="carousel-container">
-                <ul class="carousel-news">
-                    {% for article in news %}
-                    <li class="news-item">
-                        <div class="news">
-                            <div class="news-image">
-                                <img class="img-fluid" src='{{ article.image }}' alt="News image">
-                            </div>
-
-                            <div class="news-text">
-                                <p class="above-header">{{ article.category }}</p>
-                                <h4>{{ article.title }}</h4>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
-                                <br>
-                                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
-                            </div>
-                        </div>
-                    </li>
-                    {% endfor %}
-
-                    <!--<li class="news-item">
-                        <div class="news">
-                            <div class="news-image">
-                                <img class="img-fluid" src='{{ article.image }}' alt="News image">
-                            </div>
-
-                            <div class="news-text">
-                                <p class="above-header">Hotel news</p>
-                                <h4>Lorem ipsum</h4>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
-                                <br>
-                                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="news-item">
-                        <div class="news">
-                            <div class="news-image">
-                                <img class="img-fluid" src='{{ article.image }}' alt="News image">
-                            </div>
-
-                            <div class="news-text">
-                                <p class="above-header">Hotel news</p>
-                                <h4>Lorem ipsum</h4>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
-                                <br>
-                                <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
-                            </div>
-                        </div>
-                    </li>-->
-                </ul>
+    <div class="container-fluid colored-bg">
+        <div class="container container-news">
+            <h1>Recent News</h1>
+    
+            <div class="carousel-outer">
+                <span class="newsArrows" id="newsLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></span>
+                <span class="newsArrows" id="newsRightArrow" data-toggle="next"><i class="fas fa-chevron-right fa-2x"></i></span>
+                <div class="carousel-container">
+                    <ul class="carousel-news transition">
+                        {% for article in news %}
+                            {% if loop.last %}
+                            <li class="news-item ref clearfix">
+                                <div class="news">
+                                    <div class="news-image">
+                                        <img class="img-fluid" src='{{ article.image }}' alt="News image">
+                                    </div>
+        
+                                    <div class="news-text">
+                                        <p class="above-header">{{ article.category }}</p>
+                                        <h4>{{ article.title }}</h4>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
+                                        <br>
+                                        <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% else %}
+                            <li class="news-item clearfix">
+                                <div class="news">
+                                    <div class="news-image">
+                                        <img class="img-fluid" src='{{ article.image }}' alt="News image">
+                                    </div>
+        
+                                    <div class="news-text">
+                                        <p class="above-header">{{ article.category }}</p>
+                                        <h4>{{ article.title }}</h4>
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, at perferendis. Aliquid quod ex id ducimus aspernatur accusantium placeat natus amet quisquam? Iste odit impedit repudiandae non, exercitationem perferendis deleniti?</p>
+                                        <br>
+                                        <p><a href="/">Learn more</a>&nbsp;&nbsp;&nbsp; <i class="fas fa-chevron-right fa-sm"></i></p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
+                        {% endfor %}                   
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
+
+    <div class="container-fluid additional-outer colored-bg-reverse">
+        <div class="image-container" style='background-image: url({{ products.0.images.0.url }}); width: 50%; height:450px; background-size: cover; background-repeat: no-repeat; '>
+        </div>
+
+        <div class="container additional-content">
+            <div class="content-container">
+                <div class="text-container">
+                    <h1>Discover Hotel features</h1><br>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, neque iste repudiandae illo quas amet corrupti nemo officiis dolorum at commodi ratione ipsum aspernatur laboriosam modi quia sed atque beatae.
+                    </p>
+                    <a href="/"><button class="btn button-design">BOOK NOW</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="container container-reviews">
+            <h1>Guest Reviews</h1>
+
+            <div class="carousel-outer">
+                <span class="reviewArrows" id="reviewLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></span>
+                <span class="reviewArrows" id="reviewRightArrow" data-toggle="next"><i class="fas fa-chevron-right fa-2x"></i></span>
+                <div class="carousel-container">
+                    <ul class="carousel-reviews transition">
+                        {% for review in reviews %}
+                            {% if loop.last %}
+                            <li class="review-item ref-review">
+                                <div class="review">
+                                    <div class="profile-container">
+                                        <img src='{{ review.user.profile_image }}' width="70" height="70" alt="Profile Image" />
+                                        <p><b>{{ review.user.name }}</b></p>
+
+                                        <div class="rating-container">
+                                            {% if review.rating == 1 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 2 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 3 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 4 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 5 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            {% else %}
+                                            <p><i>No rating</i></p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="review-container">
+                                        <p>{{ review.comment }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% else %}
+                            <li class="review-item">
+                                <div class="review">
+                                    <div class="profile-container">
+                                        <img src='{{ review.user.profile_image }}' width="70" height="70" alt="Profile Image" />
+                                        <p><b>{{ review.user.name }}</b></p>
+
+                                        <div class="rating-container">
+                                            {% if review.rating == 1 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 2 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 3 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 4 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            {% elseif review.rating == 5 %}
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            {% else %}
+                                            <p><i>No rating</i></p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="review-container">
+                                        <p>{{ review.comment }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="container-fluid footer">
+        <div class="container footer-info">
+            <div class="row">
+                <div class="col-sm">
+                    <h1>Hotel</h1>
+                    <p>Everyday is a new day for relaxation.</p>
+
+                    <div class="social-info">
+                        <h5>
+                            Follow us &nbsp;&nbsp; <a href="/"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;&nbsp;<a href="/"><i class="fab fa-instagram"></i></a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <h5>Address</h5>
+                    <p>
+                        London<br>
+                        Main Street 1 London, CA 70413 <br> Open: 9:30AM 5:30PM
+                    </p>
+
+                    <p>
+                        New York<br>
+                        Great Street Broadway, NT 10013 <br> Open: 8:30AM 4:30PM
+                    </p>
+                </div>
+
+                <div class="col-sm">
+                    <h5>Contact us</h5>
+                    <p>
+                        +44 (808) 456-78-91 <br>
+                        <a href="mailto:hotel.london@mail.com">hotel.london@mail.com</a>
+                    </p>
+
+                    <p>
+                        +1 (810) 456-78-90 <br>
+                        <a href="mailto:hotel.ny@mail.com">hotel.ny@mail.com</a>
+                    </p>
+                </div>
+
+                <div class="col-sm">
+                    <div class="subscribe-form">
+                        <h5>Stay in touch</h5>
+                        <input class="email-input" type="email" placeholder="Your email">
+                        <button class="btn">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid ending-footer">
+            <div class="container footer-info">
+                <div class="ending-footer-content">
+                    <p>&copy;2020 Frontend akademija</p>
+
+                    <a class="footer-legal" href="/">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="">Site map</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
 {% endblock content %}

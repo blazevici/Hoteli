@@ -25,29 +25,78 @@ window.vapp = app;
 
 $(document).ready( () => {
 
-    function next(element, rooms) {
+    function next(element, items) {
         if (element.next().length > 0) {
             return element.next();
         } else {
-            return rooms.first();
+            return items.first();
         }
     }
 
-    $(document).on('click', '#showcaseArrow',  () => {
-        let carousel = $('.carousel');
-        let rooms = $('.room-item');
-        let el = $('.ref').removeClass('ref');
-        let nextRoom = next(el, rooms);
+    function previous(element, items) {
+        if (element.prev().length > 0) {
+            return element.prev();
+        } else {
+            return items.last();
+        }
+    }
 
-        nextRoom.addClass('ref').css('order', 1);
-        for (let i = 2; i <= rooms.length; i++) {
-            nextRoom = next(nextRoom, rooms).css('order', i);
+    function carouselMove(carousel, nextElement, items) {
+        for (let i = 2; i <= items.length; i++) {
+            nextElement = next(nextElement, items).css('order', i);
         }
 
         carousel.removeClass('transition');
         setTimeout (() => {
             carousel.addClass('transition');
         }, 25);
+    }
+
+    $(document).on('click', '#showcaseArrow',  () => {
+        let carousel = $('.carousel-rooms');
+        let rooms = $('.room-item');
+        let el = $('.ref-rooms').removeClass('ref-rooms');
+        let nextRoom = next(el, rooms);
+
+        nextRoom.addClass('ref-rooms').css('order', 1);
+        carouselMove(carousel, nextRoom, rooms);
     });
+
+
+    $(document).on('click', ".newsArrows", (e) => {
+        let carousel = $('.carousel-news');
+        let news = $('.news-item');
+        let el = $('.ref-news').removeClass('ref-news');
+        let nextArticle;
+
+        if ($(e.currentTarget).data('toggle') == 'next') {
+            nextArticle = next(el, news);
+            carousel.removeClass('transition-reverse');
+        } else {
+            nextArticle = previous(el, news);
+            carousel.addClass('transition-reverse');
+        }
+
+        nextArticle.addClass('ref-news').css('order', 1);
+        carouselMove(carousel, nextArticle, news);
+    });
+
+    $(document).on('click', ".reviewArrows", (e) => {
+        let carousel = $('.carousel-reviews');
+        let review = $('.review-item');
+        let el = $('.ref-review').removeClass('ref-review');
+        let nextReview;
+
+        if ($(e.currentTarget).data('toggle') == 'next') {
+            nextReview = next(el, review);
+            carousel.removeClass('transition-reverse');
+        } else {
+            nextReview = previous(el, review);
+            carousel.addClass('transition-reverse');
+        }
+
+        nextReview.addClass('ref-review').css('order', 1);
+        carouselMove(carousel, nextReview, review);
+    })
 
 });

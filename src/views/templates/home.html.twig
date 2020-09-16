@@ -1,6 +1,6 @@
 {% extends "main_layout.html.twig" %}
 
-{% block title %}Hoteli{% endblock %}
+{% block title %}Hotel{% endblock %}
 
 {% block header %}
     <header>
@@ -243,7 +243,7 @@
                     <ul class="carousel-news transition">
                         {% for article in news %}
                             {% if loop.last %}
-                            <li class="news-item ref clearfix">
+                            <li class="news-item ref-news clearfix">
                                 <div class="news">
                                     <div class="news-image">
                                         <img class="img-fluid" src='{{ article.image }}' alt="News image">

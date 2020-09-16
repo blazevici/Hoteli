@@ -1,1 +1,344 @@
-<h1>{{ product.title }}</h1>
+{% extends "main_layout.html.twig" %}
+
+{% block title %}Hotel - {{ product.title }}{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="header-info">
+            <div class="container info-container">
+                <div class="info-item">
+                    <span><i class="fas fa-map-marker-alt fa-white"></i></span>
+                    <span><a href="/">Location</a></span>
+                </div>
+    
+                <div class="info-item">
+                    <span><i class="fas fa-envelope"></i></span>
+                    <span><a href="/">Mail us</a></span>
+                </div>
+    
+                <div class="info-item">
+                    <span><i class="fas fa-key"></i></span>
+                    <span><a href="/">Login</a></span>
+                </div>
+    
+                <div class="info-item right">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <span><a href="/">DE</a></span>
+                    <span>&#124;</span>
+                    <span class="selected-lang"><a href="/">EN</a></span>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="header-navbar">
+            <div class="container navbar-container product-navbar clearfix">
+                <div class="navbar-item-logo">
+                    <a class="navbar-logo" href="/">Hotel</a>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Home</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">About</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Rooms</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Services</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Blog</a>
+                    </div>
+                </div>
+    
+                <div class="navbar-links">
+                    <div class="navbar-item">
+                        <a href="/">Contact</a>
+                    </div>
+                </div>
+
+                <div class="navbar-links navbar-no-padding">
+                    <div class="navbar-item">
+                        <a href="/"><button class="btn">BOOK NOW</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div class="container slideshow-container">
+        <div class="banner-image">
+            {% set counter = 1 %}
+            {% for image in product.images %}
+                {% if loop.first %}
+                <img class="img-fluid active" id="banner-{{ counter }}" src='{{ image.url }}' alt="Hotel room">
+                {% set counter = counter + 1 %}
+                {% else %}
+                <img class="img-fluid hidden" id="banner-{{ counter }}" src='{{ image.url }}' alt="Hotel room">
+                {% set counter = counter + 1 %}
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="banner-gallery">
+            <!--<span class="galleryArrows" id="galleryLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></span>
+            <span class="galleryArrows" id="galleryRightArrow" data-toggle="next"><i class="fas fa-chevron-right fa-2x"></i></span>-->
+            {% set counter = 1 %}
+            {% for image in product.images %}
+                <img class="img-fluid" data-number="{{ counter }}" src='{{ image.url }}' alt="Hotel room">
+                {% set counter = counter + 1 %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container info-container">
+        <div class="row">
+            <div class="col-sm product-info">
+                <h1>{{ product.title }}</h1>
+
+                <div class="general-info">
+                    <div class="general-item">
+                        <span><i class="far fa-user fa-3x"></i></span>
+                        <p>
+                        {% if product.max_adults == 1 %}
+                            {{ product.max_adults }} adult
+                        {% else %}
+                            {{ product.max_adults }} adults
+                        {% endif %}
+                        </p>
+                    </div>
+
+                    <div class="general-item">
+                        <span><i class="fas fa-baby fa-3x"></i></span>
+                        <p>
+                            {{ product.max_children }} children
+                        </p>
+                    </div>
+
+                    <div class="general-item">
+                        <span><i class="fas fa-ruler-combined fa-3x"></i></span>
+                        <p>
+                            {{ product.squares }} m2
+                        </p>
+                    </div>
+                </div>
+
+                <hr>
+                    <p>
+                        {{ product.description }}
+                    </p>
+                <hr>
+
+                <div class="services-info">
+                    <h4>Room services</h4>
+
+                    <div class="services-container">
+                        {% if product.services.0.accessories %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Accessories&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.1.bar %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Bar 24 hours&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.2.cleaning %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Cleaning&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.3.phone %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Phone&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.4.restaurant %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Restaurant&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.5.spa_zone %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Spa zone&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.6.transport %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Transport&nbsp;&nbsp;</span>
+                        {% endif %}
+                        {% if product.services.7.wifi %}
+                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Wi-Fi&nbsp;&nbsp;</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="rules-info">
+                    <h4>Hotel rules</h4>
+
+                    <p>
+                        {% for rule in product.hotel_rules %}
+                            - {{ rule }}<br>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs booking-container">
+                <h2>Start booking</h2>
+                <h3>{{ product.formatted_price }}</h3><br>
+                <p><b>Dates</b></p>
+                <div class="input-group flex-nowrap datepicker date">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="From Date" aria-label="From Date" aria-describedby="addon-wrapping">
+                </div>
+            </div>
+        </div>
+
+        <div class="container comments-container">
+            <h4>Comments</h4>
+
+            {% for comment in product.comments %}
+            <div class="comment">
+                <div class="profile-info">
+                    <img src='{{ comment.user.profile_image }}' width="70" height="70" alt="Profile picture">
+                    <p><b>{{ comment.user.name }}</b></p>
+
+                    <div class="reply-container">
+                        <a href="/"><span><i class="fas fa-reply"></i></span> Reply</a>
+                    </div>
+                </div>
+
+                <div class="comment-text">
+                    <p>{{ comment.comment }}</p>
+                </div>
+
+                {% for reply in comment.replies %}
+                <div class="reply">
+                    <div class="profile-info">
+                        <img src='{{ reply.user.profile_image }}' width="70" height="70" alt="Profile picture">
+                        <p><b>{{ reply.user.name }}</b></p>
+    
+                        <div class="reply-container">
+                            <a href="/"><span><i class="fas fa-reply"></i></span> Reply</a>
+                        </div>
+                    </div>
+
+                    <div class="reply-text">
+                        <p>{{ reply.comment }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="container comment-form">
+            <h4>Leave a comment</h4>
+
+            <div class="form-content">
+                <div class="row">
+                    <div class="col-xs half-width">
+                        <label for="name">Name</label>
+                        <input class="form-control" type="text" name="name" placeholder="Your name">
+                    </div>
+
+                    <div class="col-xs half-width">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="email" name="name" placeholder="Your email">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="full-width">
+                        <div id="word-counter">
+                            <span>0</span>/500
+                        </div>
+                        <label for="comment">Comment</label>
+                        <!-- <input class="form-control" type="textarea" name="comment" placeholder="Your comment"> -->
+                        <textarea class="form-control" id="comment-area" name="comment" cols="30" rows="7" placeholder="Your comment" style="resize: none;"></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="save-name"><input type="checkbox" name="save-name">&nbsp;&nbsp;Save my name and email in this browser for the next time I comment.</label>
+                </div>
+
+                <button class="btn comment-button">COMMENT</button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    <footer class="container-fluid footer">
+        <div class="container footer-info">
+            <div class="row">
+                <div class="col-sm">
+                    <h1>Hotel</h1>
+                    <p>Everyday is a new day for relaxation.</p>
+
+                    <div class="social-info">
+                        <h5>
+                            Follow us &nbsp;&nbsp; <a href="/"><i class="fab fa-facebook-square"></i></a>&nbsp;&nbsp;&nbsp;<a href="/"><i class="fab fa-instagram"></i></a>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <h5>Address</h5>
+                    <p>
+                        London<br>
+                        Main Street 1 London, CA 70413 <br> Open: 9:30AM 5:30PM
+                    </p>
+
+                    <p>
+                        New York<br>
+                        Great Street Broadway, NT 10013 <br> Open: 8:30AM 4:30PM
+                    </p>
+                </div>
+
+                <div class="col-sm">
+                    <h5>Contact us</h5>
+                    <p>
+                        +44 (808) 456-78-91 <br>
+                        <a href="mailto:hotel.london@mail.com">hotel.london@mail.com</a>
+                    </p>
+
+                    <p>
+                        +1 (810) 456-78-90 <br>
+                        <a href="mailto:hotel.ny@mail.com">hotel.ny@mail.com</a>
+                    </p>
+                </div>
+
+                <div class="col-sm">
+                    <div class="subscribe-form">
+                        <h5>Stay in touch</h5>
+                        <input class="email-input" type="email" placeholder="Your email">
+                        <button class="btn">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid ending-footer">
+            <div class="container footer-info">
+                <div class="ending-footer-content">
+                    <p>&copy;2020 Frontend akademija</p>
+
+                    <a class="footer-legal" href="/">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="">Site map</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

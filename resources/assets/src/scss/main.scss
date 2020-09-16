@@ -5,6 +5,7 @@ $header-info-color: #F0ECE7;
 $header-color: #272525;
 $footer-secondary-color: #1d1d1d;
 $button-color: #9B6333;
+$booking-color: #f0ece7;
 $secondary-color: #f2f2f2;
 $rating-color: #9e6739;
 $font-color: #000000;
@@ -53,6 +54,15 @@ $font-text: "DM Serif Text", serif;
     padding: 0 8rem;
 }
 
+@mixin less-tight-container {
+    padding: 0 5rem;
+}
+
+@mixin profile-picture {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 body {
     position: relative;
 
@@ -76,6 +86,12 @@ body {
     .btn:active, .btn:focus {
         box-shadow: 0px 0px 5px $button-color !important;
         outline: none !important;
+    }
+
+    .form-control:active, .form-control:focus {
+        box-shadow: 0px 0px 5px $button-color !important;
+        outline: none !important;
+        border-color: $button-color;
     }
 
     .colored-bg {
@@ -141,6 +157,7 @@ body {
 
                 .navbar-item-logo {
                     float: left;
+                    padding: 0.1rem 0;
 
                     .navbar-logo {
                         font-size: 2.25rem;
@@ -166,7 +183,22 @@ body {
                     .navbar-item a {
                         color: #FFFFFF !important;
                     }
+
+                    .navbar-item a button {
+                        @include button-design;
+                        padding: 0.3rem 1rem;
+                        font-size: 0.9rem;
+                        letter-spacing: 0.025rem;
+                    }
                 }
+
+                .navbar-no-padding {
+                    padding: 0;
+                }
+            }
+
+            .product-navbar {
+                text-align: right;
             }
         }
 
@@ -594,8 +626,7 @@ body {
                                 border-radius: 70px;
 
                                 img {
-                                    object-fit: cover;
-                                    border-radius: 50%;
+                                    @include profile-picture;
                                 }
 
                                 p {
@@ -717,13 +748,249 @@ body {
                     }
 
                     .footer-legal {
-                        margin-left: 25rem;
+                        margin-left: 27rem;
                     }
                 }
             }
         }
-    }
+    
+        /* 
+        ------------------------ PRODUCT PAGE CSS --------------------------------
+        */    
+        
+        .slideshow-container {
+            @include less-tight-container;
+
+            .banner-image {
+                margin-bottom: 1.5rem;
+
+                img {
+                    width: 100%;
+                    height: 450px;
+                    object-fit: cover;
+                }
+
+                .hidden {
+                    display: none;
+                }
+            }
+
+            .banner-gallery{
+                display: flex;
+                max-width: 100%;
+                height: 120px;
+                position: relative;
+                margin-bottom: 1.5rem;
+
+                .galleryArrows {
+                    cursor: pointer;
+                }
+
+                #galleryLeftArrow {
+                    position: absolute;
+                    left: -2rem;
+                    top: 4rem;
+                }
+
+                #galleryRightArrow {
+                    position: absolute;
+                    right: -2rem;
+                    top: 4rem;
+                }
+
+                img {
+                    object-fit: cover;
+                    max-width: 200px;
+                    margin-right: 1.5rem;
+                    cursor: pointer;
+                    filter: opacity(75%);
+                }
+
+                img:hover {
+                    filter: opacity(100%);
+                }
+            }
+        }
 
         
+        .info-container {
+            @include less-tight-container;
+
+            h4 {
+                margin-bottom: 1rem !important;
+            }
+            
+            .row {
+                margin: 0;
+                padding: 0;
+
+                .product-info {
+                    padding: 0;
+                    padding-right: 2rem;
+
+                    h1 {
+                        font-family: $font-text;
+                    }
+
+                    .general-info {
+                        padding: 1rem 0 0 0;
+                        display: flex;
+
+                        .general-item {
+                            flex: 0 0 33.3333%;
+
+                            span {
+                                vertical-align: middle;
+                            }
+    
+                            p {
+                                display: inline-block;
+                                font-weight: bold;
+                                padding: 0 1.5rem;
+                            }
+                        }
+                    }
+
+                    .services-info {
+                        margin-bottom: 1.5rem;
+
+                        .services-container {
+                            border: 1px solid #929391;
+                            border-radius: 2px;
+                            padding: 1rem 2rem;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            span {
+                                flex: 0 0 25%;
+                                padding: 0.5rem;
+
+                                i {
+                                    color: $button-color;
+                                }
+                            }
+                        }
+                    }
+
+                    .rules-info {
+                        margin-bottom: 3rem;
+
+                        p {
+                            line-height: 1.75rem;
+                        }
+                    }
+                }
+
+                .booking-container {
+                    background-color: $booking-color;
+                    padding: 1rem 5rem 1rem 1.5rem;
+                    border-radius: 2px;
+
+                    h3 {
+                        color: $button-color;
+                    }
+                }
+            }
+
+            .comments-container {
+                max-width: 80%;
+                margin: 0;
+
+                .comment {
+
+                    .profile-info {
+
+                        img {
+                            @include profile-picture;
+                        }
+
+                        p {
+                            display: inline-block;
+                            padding: 1rem 0.5rem;
+                            margin: 0;
+                        }
+
+                        .reply-container {
+                            float: right;
+                            padding: 1rem 0;
+
+                            a {
+                                color: #000000;
+                            }
+                        }
+                    }
+
+                    .comment-text {
+
+                        p {
+                            padding-left: 7rem;
+                            margin-bottom: 2rem;
+                        }
+                    }
+
+
+                    .reply {
+                        padding-left: 7rem;
+                        max-width: 90%;
+
+                        .reply-text {
+                            p {
+                                padding-left: 7rem;
+                                margin-bottom: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .comment-form {
+                width: 80%;
+                margin: 0;
+
+                .form-content {
+                    margin-bottom: 3rem;
+
+                    .row {
+
+                        .half-width {
+                            width: 50%;
+                            padding-right: 3rem;
+                            margin-bottom: 1rem;
+                        }
+    
+                        label {
+                            padding-left: 0.75rem;
+                        }
+    
+                        .full-width {
+                            width: 100%;
+                            padding-right: 3rem;
+
+                            #word-counter {
+                                float: right;
+                            }
+                        }
+                    }
+    
+                    input[type="checkbox"] {
+                        zoom: 1.5;
+                        margin: 0.5rem 0;
+                        vertical-align: middle;
+                    }
+    
+                    .comment-button {
+                        @include button-design;
+                        background-color: $footer-secondary-color;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    
+    }
+
+
     
 }

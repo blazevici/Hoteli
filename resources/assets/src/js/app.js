@@ -2,6 +2,8 @@ import Vue from 'vue';
 
 window.$ = window.jQuery = require('jquery');
 
+import 'bootstrap/dist/js/bootstrap.min.js';
+
 Vue.component('v-application', require('./components/app.vue'))
 
 Vue.component('v-container', require('./components/container.vue'))
@@ -24,6 +26,8 @@ const app = new Vue({
 window.vapp = app;
 
 $(document).ready( () => {
+
+    //datepicker').datepicker();
 
     function next(element, items) {
         if (element.next().length > 0) {
@@ -98,5 +102,32 @@ $(document).ready( () => {
         nextReview.addClass('ref-review').css('order', 1);
         carouselMove(carousel, nextReview, review);
     })
+
+    $(document).on('click', ".banner-gallery img", (e) => {
+        let galleryNumber = $(e.target).data("number");
+        let bannerImage = $(e.target).parent().prev().find("#banner-" + galleryNumber);
+
+        $(e.target).parent().prev().find(".active").toggleClass("active hidden");
+        bannerImage.toggleClass("hidden active");
+    });
+
+    $(document).on('keyup', "#comment-area", (e) => {
+        if ($(e.target).val() == "") {
+            // When deleting all text, this puts counter to 0
+            $(e.target).parent().find("#word-counter span").text("0");
+        }
+
+        let counter = $(e.target).parent().find("#word-counter span");
+        let words = $(e.target).val().match(/\S+/g).length;
+
+        if (words > 500) {
+            // Split the string on first 500 words and rejoin on spaces
+            let trimmed = $(e.target).val().split(/\s+/, 500).join(" ");
+            // Add a space at the end to make sure more typing creates new words
+            $(e.target).val(trimmed + " ");
+        } else {
+            counter.text(words);
+        }      
+    });
 
 });

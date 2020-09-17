@@ -98,14 +98,16 @@
             {% endfor %}
         </div>
 
-        <div class="banner-gallery">
-            <!--<span class="galleryArrows" id="galleryLeftArrow"><i class="fas fa-chevron-left fa-2x"></i></span>
-            <span class="galleryArrows" id="galleryRightArrow" data-toggle="next"><i class="fas fa-chevron-right fa-2x"></i></span>-->
-            {% set counter = 1 %}
-            {% for image in product.images %}
-                <img class="img-fluid" data-number="{{ counter }}" src='{{ image.url }}' alt="Hotel room">
-                {% set counter = counter + 1 %}
-            {% endfor %}
+        <div class="banner-gallery-outer">
+            <span class="galleryArrows" id="galleryLeftArrow"><i class="fas fa-chevron-left"></i></span>
+            <span class="galleryArrows" id="galleryRightArrow" data-toggle="next"><i class="fas fa-chevron-right"></i></span>
+            <div class="banner-gallery">
+                {% set counter = 1 %}
+                {% for image in product.images %}
+                    <img class="img-fluid" data-number="{{ counter }}" src='{{ image.url }}' alt="Hotel room">
+                    {% set counter = counter + 1 %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 

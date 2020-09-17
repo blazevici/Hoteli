@@ -53090,10 +53090,31 @@ $(document).ready(function () {
 
     $(document).on('click', ".banner-gallery img", function (e) {
         var galleryNumber = $(e.target).data("number");
-        var bannerImage = $(e.target).parent().prev().find("#banner-" + galleryNumber);
+        var bannerImage = $(e.target).parent().parent().prev().find("#banner-" + galleryNumber);
 
-        $(e.target).parent().prev().find(".active").toggleClass("active hidden");
+        $(e.target).parent().parent().prev().find(".active").toggleClass("active hidden");
         bannerImage.toggleClass("hidden active");
+    });
+
+    $(document).on('click', '.galleryArrows', function (e) {
+
+        if ($(e.currentTarget).data("toggle") == "next") {
+            var currentImage = $(e.target).parent().parent().prev().find(".active");
+            var nextImage = $(e.target).parent().parent().prev().find(".active").next();
+
+            if (nextImage.length > 0) {
+                currentImage.toggleClass("active hidden");
+                nextImage.toggleClass("hidden active");
+            }
+        } else {
+            var _currentImage = $(e.target).parent().parent().prev().find(".active");
+            var prevImage = $(e.target).parent().parent().prev().find(".active").prev();
+
+            if (prevImage.length > 0) {
+                _currentImage.toggleClass("active hidden");
+                prevImage.toggleClass("hidden active");
+            }
+        }
     });
 
     $(document).on('keyup', "#comment-area", function (e) {

@@ -130,10 +130,31 @@ $(document).ready( () => {
 
     $(document).on('click', ".banner-gallery img", (e) => {
         let galleryNumber = $(e.target).data("number");
-        let bannerImage = $(e.target).parent().prev().find("#banner-" + galleryNumber);
+        let bannerImage = $(e.target).parent().parent().prev().find("#banner-" + galleryNumber);
 
-        $(e.target).parent().prev().find(".active").toggleClass("active hidden");
+        $(e.target).parent().parent().prev().find(".active").toggleClass("active hidden");
         bannerImage.toggleClass("hidden active");
+    });
+
+    $(document).on('click', '.galleryArrows', (e) => {
+
+        if ($(e.currentTarget).data("toggle") == "next") {
+            let currentImage = $(e.target).parent().parent().prev().find(".active");
+            let nextImage = $(e.target).parent().parent().prev().find(".active").next();
+
+            if (nextImage.length > 0) {
+                currentImage.toggleClass("active hidden");
+                nextImage.toggleClass("hidden active");
+            }
+        } else {
+            let currentImage = $(e.target).parent().parent().prev().find(".active");
+            let prevImage = $(e.target).parent().parent().prev().find(".active").prev();
+
+            if (prevImage.length > 0) {
+                currentImage.toggleClass("active hidden");
+                prevImage.toggleClass("hidden active");
+            }
+        }
     });
 
     $(document).on('keyup', "#comment-area", (e) => {

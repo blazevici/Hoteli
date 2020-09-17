@@ -725,7 +725,6 @@ body {
     
                         .email-input:focus {
                             outline: none;
-                            border-bottom: 3px solid gray;
                         }
     
                         .social-info {
@@ -786,12 +785,8 @@ body {
                 }
             }
 
-            .banner-gallery{
-                display: flex;
-                max-width: 100%;
-                height: 120px;
+            .banner-gallery-outer {
                 position: relative;
-                margin-bottom: 1.5rem;
 
                 .galleryArrows {
                     cursor: pointer;
@@ -800,25 +795,33 @@ body {
                 #galleryLeftArrow {
                     position: absolute;
                     left: -2rem;
-                    top: 4rem;
+                    top: 3rem;
                 }
 
                 #galleryRightArrow {
                     position: absolute;
                     right: -2rem;
-                    top: 4rem;
+                    top: 3rem;
                 }
-
-                img {
-                    object-fit: cover;
-                    max-width: 200px;
-                    margin-right: 1.5rem;
-                    cursor: pointer;
-                    filter: opacity(75%);
-                }
-
-                img:hover {
-                    filter: opacity(100%);
+                
+                .banner-gallery {
+                    display: flex;
+                    overflow: hidden;
+                    max-width: 100%;
+                    height: 120px;
+                    margin-bottom: 1.5rem;
+    
+                    img {
+                        object-fit: cover;
+                        max-width: 200px;
+                        margin-right: 1.5rem;
+                        cursor: pointer;
+                        filter: opacity(75%);
+                    }
+    
+                    img:hover {
+                        filter: opacity(100%);
+                    }
                 }
             }
         }

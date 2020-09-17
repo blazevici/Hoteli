@@ -53031,6 +53031,20 @@ $(document).ready(function () {
         }
     }
 
+    function getNextItem(currentArrow, currentElement, items, carousel) {
+        var nextItem = void 0;
+
+        if (currentArrow.data('toggle') == 'next') {
+            nextItem = next(currentElement, items);
+            carousel.removeClass('transition-reverse');
+        } else {
+            nextItem = previous(currentElement, items);
+            carousel.addClass('transition-reverse');
+        }
+
+        return nextItem;
+    }
+
     function carouselMove(carousel, nextElement, items) {
         for (var i = 2; i <= items.length; i++) {
             nextElement = next(nextElement, items).css('order', i);
@@ -53056,15 +53070,7 @@ $(document).ready(function () {
         var carousel = $('.carousel-news');
         var news = $('.news-item');
         var el = $('.ref-news').removeClass('ref-news');
-        var nextArticle = void 0;
-
-        if ($(e.currentTarget).data('toggle') == 'next') {
-            nextArticle = next(el, news);
-            carousel.removeClass('transition-reverse');
-        } else {
-            nextArticle = previous(el, news);
-            carousel.addClass('transition-reverse');
-        }
+        var nextArticle = getNextItem($(e.currentTarget), el, news, carousel);
 
         nextArticle.addClass('ref-news').css('order', 1);
         carouselMove(carousel, nextArticle, news);
@@ -53072,20 +53078,12 @@ $(document).ready(function () {
 
     $(document).on('click', ".reviewArrows", function (e) {
         var carousel = $('.carousel-reviews');
-        var review = $('.review-item');
+        var reviews = $('.review-item');
         var el = $('.ref-review').removeClass('ref-review');
-        var nextReview = void 0;
-
-        if ($(e.currentTarget).data('toggle') == 'next') {
-            nextReview = next(el, review);
-            carousel.removeClass('transition-reverse');
-        } else {
-            nextReview = previous(el, review);
-            carousel.addClass('transition-reverse');
-        }
+        var nextReview = getNextItem($(e.currentTarget), el, reviews, carousel);
 
         nextReview.addClass('ref-review').css('order', 1);
-        carouselMove(carousel, nextReview, review);
+        carouselMove(carousel, nextReview, reviews);
     });
 
     $(document).on('click', ".banner-gallery img", function (e) {

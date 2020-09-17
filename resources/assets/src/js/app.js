@@ -70,6 +70,20 @@ $(document).ready( () => {
         }
     }
 
+    function getNextItem(currentArrow, currentElement, items, carousel) {
+        let nextItem;
+
+        if (currentArrow.data('toggle') == 'next') {
+            nextItem = next(currentElement, items);
+            carousel.removeClass('transition-reverse');
+        } else {
+            nextItem = previous(currentElement, items);
+            carousel.addClass('transition-reverse');
+        }
+
+        return nextItem;
+    }
+
     function carouselMove(carousel, nextElement, items) {
         for (let i = 2; i <= items.length; i++) {
             nextElement = next(nextElement, items).css('order', i);
@@ -91,20 +105,11 @@ $(document).ready( () => {
         carouselMove(carousel, nextRoom, rooms);
     });
 
-
     $(document).on('click', ".newsArrows", (e) => {
         let carousel = $('.carousel-news');
         let news = $('.news-item');
         let el = $('.ref-news').removeClass('ref-news');
-        let nextArticle;
-
-        if ($(e.currentTarget).data('toggle') == 'next') {
-            nextArticle = next(el, news);
-            carousel.removeClass('transition-reverse');
-        } else {
-            nextArticle = previous(el, news);
-            carousel.addClass('transition-reverse');
-        }
+        let nextArticle = getNextItem($(e.currentTarget), el, news, carousel);
 
         nextArticle.addClass('ref-news').css('order', 1);
         carouselMove(carousel, nextArticle, news);
@@ -112,20 +117,12 @@ $(document).ready( () => {
 
     $(document).on('click', ".reviewArrows", (e) => {
         let carousel = $('.carousel-reviews');
-        let review = $('.review-item');
+        let reviews = $('.review-item');
         let el = $('.ref-review').removeClass('ref-review');
-        let nextReview;
-
-        if ($(e.currentTarget).data('toggle') == 'next') {
-            nextReview = next(el, review);
-            carousel.removeClass('transition-reverse');
-        } else {
-            nextReview = previous(el, review);
-            carousel.addClass('transition-reverse');
-        }
+        let nextReview = getNextItem($(e.currentTarget), el, reviews, carousel);
 
         nextReview.addClass('ref-review').css('order', 1);
-        carouselMove(carousel, nextReview, review);
+        carouselMove(carousel, nextReview, reviews);
     })
 
     $(document).on('click', ".banner-gallery img", (e) => {

@@ -5031,7 +5031,7 @@ body .container-fluid .container-news h1 {
 }
 
 body .container-fluid .container-news .carousel-outer {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   position: relative;
 }
 
@@ -5385,7 +5385,7 @@ body .container-fluid .footer .ending-footer .ending-footer-content a {
 }
 
 body .container-fluid .footer .ending-footer .ending-footer-content .footer-legal {
-  margin-left: 27rem;
+  margin-left: 33rem;
 }
 
 body .container-fluid .slideshow-container {

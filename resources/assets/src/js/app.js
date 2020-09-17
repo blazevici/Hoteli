@@ -1,8 +1,10 @@
 import Vue from 'vue';
 
 window.$ = window.jQuery = require('jquery');
-
-import 'bootstrap/dist/js/bootstrap.min.js';
+window.Popper = require('popper.js').default;
+require('webpack-jquery-ui');
+require('webpack-jquery-ui/css');
+import 'bootstrap';
 
 Vue.component('v-application', require('./components/app.vue'))
 
@@ -27,7 +29,30 @@ window.vapp = app;
 
 $(document).ready( () => {
 
-    //datepicker').datepicker();
+    let disableddates = $('#startDate').data("disabledDates");
+
+    function unavailable(date) {
+        let string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+        return [disableddates.indexOf(string) == -1];
+    }
+
+    $('#startDate').datepicker({
+        dateFormat: 'yy/mm/dd',
+        autoclose: true,
+        beforeShowDay: unavailable
+    })
+    .change(dateChanged)
+    .on('changeDate', dateChanged);
+    
+    function dateChanged() {
+        $('#endDate').datepicker('destroy');
+        $('#endDate').val("");
+        $('#endDate').datepicker({
+            dateFormat: 'yy/mm/dd',
+            minDate: $('#startDate').val(),
+            autoclose: true
+        });
+    }
 
     function next(element, items) {
         if (element.next().length > 0) {

@@ -5110,6 +5110,17 @@ body .container-fluid .container-news .carousel-outer .carousel-container .carou
   color: gray;
 }
 
+body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text p {
+  margin-bottom: 0.5rem;
+}
+
+body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text h4 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 2rem;
+}
+
 body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text p i {
   color: #9B6333;
 }
@@ -5301,7 +5312,7 @@ body .container-fluid .footer {
 }
 
 body .container-fluid .footer .footer-info {
-  padding: 0 8rem;
+  padding: 0 5rem;
 }
 
 body .container-fluid .footer .footer-info h1 {
@@ -5490,25 +5501,21 @@ body .container-fluid .info-container .row .product-info .services-info {
 body .container-fluid .info-container .row .product-info .services-info .services-container {
   border: 1px solid #929391;
   border-radius: 2px;
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-body .container-fluid .info-container .row .product-info .services-info .services-container span {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
-  padding: 0.5rem;
+body .container-fluid .info-container .row .product-info .services-info .services-container div {
+  white-space: nowrap;
+  width: 25%;
+  padding: 1rem 2rem 1rem 1rem;
 }
 
-body .container-fluid .info-container .row .product-info .services-info .services-container span i {
+body .container-fluid .info-container .row .product-info .services-info .services-container div i {
   color: #9B6333;
 }
 
@@ -5522,12 +5529,53 @@ body .container-fluid .info-container .row .product-info .rules-info p {
 
 body .container-fluid .info-container .row .booking-container {
   background-color: #f0ece7;
-  padding: 1rem 5rem 1rem 1.5rem;
+  padding: 1.5rem 1rem 1.5rem 1.5rem;
   border-radius: 2px;
 }
 
 body .container-fluid .info-container .row .booking-container h3 {
   color: #9B6333;
+}
+
+body .container-fluid .info-container .row .booking-container .dates-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+body .container-fluid .info-container .row .booking-container .dates-container .input-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 170px;
+  margin-right: 0.5rem;
+}
+
+body .container-fluid .info-container .row .booking-container .guests-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+body .container-fluid .info-container .row .booking-container .guests-container .input-group {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  max-width: 170px;
+  margin-right: 0.5rem;
+}
+
+body .container-fluid .info-container .row .booking-container .button-container {
+  text-align: center;
+}
+
+body .container-fluid .info-container .row .booking-container .button-container .check-button {
+  background-color: #9B6333;
+  color: #FFFFFF;
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
 }
 
 body .container-fluid .info-container .comments-container {

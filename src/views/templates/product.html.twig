@@ -152,28 +152,28 @@
 
                     <div class="services-container">
                         {% if product.services.0.accessories %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Accessories&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Accessories&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.1.bar %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Bar 24 hours&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Bar 24h&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.2.cleaning %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Cleaning&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Cleaning&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.3.phone %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Phone&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Phone&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.4.restaurant %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Restaurant&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Restaurant&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.5.spa_zone %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Spa zone&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Spa zone&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.6.transport %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Transport&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Transport&nbsp;&nbsp;</div>
                         {% endif %}
                         {% if product.services.7.wifi %}
-                            <span><i class="fas fa-check"></i>&nbsp;&nbsp;Wi-Fi&nbsp;&nbsp;</span>
+                            <div><i class="fas fa-check"></i>&nbsp;&nbsp;Wi-Fi&nbsp;&nbsp;</div>
                         {% endif %}
                     </div>
                 </div>
@@ -189,15 +189,50 @@
                 </div>
             </div>
 
-            <div class="col-xs booking-container">
-                <h2>Start booking</h2>
-                <h3>{{ product.formatted_price }}</h3><br>
-                <p><b>Dates</b></p>
-                <div class="input-group flex-nowrap datepicker date">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="addon-wrapping"><i class="far fa-calendar-alt"></i></span>
+            <div class="col-xs">
+                <div class="booking-container">
+                    <h2>Start booking</h2>
+                    <h3>{{ product.formatted_price }}</h3><br>
+                    <p><b>Dates</b></p>
+                    
+                    <div class="dates-container">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
+                            </div>
+                            {% set disabledDates = [] %}
+                            {% for reserved in product.reserved_dates %}
+                                {% set disabledDates = disabledDates|merge([reserved.date]) %}
+                            {% endfor %}
+                            <input type="text" class="form-control date" data-disabled-dates="{{ disabledDates|json_encode }}" id="startDate" placeholder="From Date">
+                        </div>&nbsp;
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
+                            </div>
+                            <input type="text" class="form-control date" id="endDate" placeholder="To Date">
+                        </div>
                     </div>
-                    <input type="text" class="form-control" placeholder="From Date" aria-label="From Date" aria-describedby="addon-wrapping">
+
+                    <p><b>Guests</b></p>
+                    <div class="guests-container">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Adults">
+                        </div>&nbsp;
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-baby"></i></span>
+                            </div>
+                            <input type="number" class="form-control" placeholder="Children">
+                        </div>&nbsp;
+                    </div>
+
+                    <div class="button-container">
+                        <button class="btn check-button">CHECK AVAILABILITY</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -283,7 +318,7 @@
             <div class="row">
                 <div class="col-sm">
                     <h1>Hotel</h1>
-                    <p>Everyday is a new day for relaxation.</p>
+                    <p style="max-width: 50%">Everyday is a new day for relaxation.</p>
 
                     <div class="social-info">
                         <h5>

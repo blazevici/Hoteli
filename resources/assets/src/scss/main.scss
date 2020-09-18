@@ -1,10 +1,11 @@
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text&display=swap');
+
 
 $header-info-color: #F0ECE7;
 $header-color: #272525;
 $footer-secondary-color: #1d1d1d;
-$button-color: #9B6333;
+$button-color: #8E5C2F;
 $booking-color: #f0ece7;
 $secondary-color: #f2f2f2;
 $rating-color: #9e6739;
@@ -66,6 +67,50 @@ $font-text: "DM Serif Text", serif;
 body {
     position: relative;
 
+    /*
+        ICONS CLASSES ------------------
+    */
+
+    path {
+        transform: translateY(-3rem);
+    }
+
+    .icon {
+        overflow: overlay;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .width-1 {
+        width: 1em;
+    }
+
+    .width-2 {
+        width: 1.5em;
+    }
+
+    .width-3 {
+        width: 2em;
+    }
+
+    .width-sm {
+        width: 0.5em;
+    }
+
+    .width-form {
+        width: 0.8em;
+        overflow: overlay;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .white-icon {
+        fill: white;
+    }
+
+    .accent-icon {
+        fill: $button-color;
+    }
 
     /* 
         GENERAL --------------------------
@@ -849,6 +894,7 @@ body {
                     .general-info {
                         padding: 1rem 0 0 0;
                         display: flex;
+                        align-items: center;
 
                         .general-item {
                             flex: 0 0 33.3333%;

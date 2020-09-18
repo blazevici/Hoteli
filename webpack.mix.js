@@ -5,11 +5,11 @@ mix.setPublicPath('./public')
 
 mix.sass(
 	'resources/assets/src/scss/main.scss',
-	'public/assets/css'
+	'public/assets/css/'
 );
 mix.js(
 	'resources/assets/src/js/app.js',
-	'public/assets/js/app.js'
+	'public/assets/js/'
 );
 
 mix.version();

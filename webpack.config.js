@@ -1,3 +1,8 @@
+const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
   rules: [
     {
@@ -26,7 +31,7 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loaders: ["style-loader","css-loader"]
+      loaders: [MiniCssExtractPlugin.loader,"css-loader"]
     },
     {
       test: /\.(jpe?g|png|gif)$/i,
@@ -38,6 +43,12 @@ module.exports = {
       }
     }
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimizer: [new UglifyJsPlugin()],
+  },
   resolve: {
     alias: {
       // Force all modules to use the same jquery version.
@@ -54,6 +65,13 @@ module.exports = {
     }),
     new webpack.SourceMapDevToolPlugin({
       exclude: ['popper.js']
-    })
-  ]
+    }),
+    new CompressionPlugin({
+      filename: "[path].gz[query]",
+      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/i,
+      algorithm: 'gzip',
+    }),
+    new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin(),
+  ],
 }

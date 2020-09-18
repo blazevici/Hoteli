@@ -1,12 +1,13 @@
-import Vue from 'vue';
+//import Vue from 'vue';
 
 window.$ = window.jQuery = require('jquery');
-window.Popper = require('popper.js').default;
-require('webpack-jquery-ui');
+//window.Popper = require('popper.js').default;
+require('webpack-jquery-ui/datepicker');
 require('webpack-jquery-ui/css');
-import 'bootstrap';
+//import 'bootstrap';
 
-Vue.component('v-application', require('./components/app.vue'))
+
+/*Vue.component('v-application', require('./components/app.vue'))
 
 Vue.component('v-container', require('./components/container.vue'))
 Vue.component('v-header', require('./components/header.vue'))
@@ -25,7 +26,7 @@ const app = new Vue({
     el: '#app'
 });
 
-window.vapp = app;
+window.vapp = app;*/
 
 $(document).ready( () => {
 

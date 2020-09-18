@@ -261,8 +261,9 @@ body .container-fluid .background-photo .container-fluid .background-info .socia
   color: #FFFFFF;
 }
 
-body .container-fluid .background-photo .container-fluid .background-info .social-info h5 {
+body .container-fluid .background-photo .container-fluid .background-info .social-info h2 {
   color: #FFFFFF;
+  font-size: 1.5em;
   font-weight: 400;
 }
 
@@ -344,6 +345,10 @@ body .container-fluid .background-photo .container-fluid .carousel-outer .carous
   font-weight: bold;
 }
 
+body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel-rooms .room-item .room .room-text h3 {
+  font-size: 1.25em;
+}
+
 body .container-fluid .background-photo .container-fluid .carousel-outer .carousel-container .carousel-rooms .ref-rooms {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -417,7 +422,7 @@ body .container-fluid .container-apartments .row .apartment-card .apartment-text
   font-weight: bold;
 }
 
-body .container-fluid .container-apartments .row .apartment-card .apartment-text h5 {
+body .container-fluid .container-apartments .row .apartment-card .apartment-text h3 {
   font-size: 1.1rem;
 }
 
@@ -461,11 +466,12 @@ body .container-fluid .jumbotron .jumbotron-info .info-card {
   padding: 0 1rem 0 0;
 }
 
-body .container-fluid .jumbotron .jumbotron-info .info-card i {
+body .container-fluid .jumbotron .jumbotron-info .info-card span {
+  display: inline-block;
   margin-bottom: 0.5rem;
   border-radius: 100px;
   background-color: #f0ece7;
-  width: 70px;
+  width: 80px;
 }
 
 body .container-fluid .jumbotron .jumbotron-info .info-card .info-text {
@@ -566,7 +572,7 @@ body .container-fluid .container-news .carousel-outer .carousel-container .carou
 }
 
 body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text .above-header {
-  color: gray;
+  color: #424242;
 }
 
 body .container-fluid .container-news .carousel-outer .carousel-container .carousel-news .news-item .news .news-text p {
@@ -736,8 +742,8 @@ body .container-fluid .container-reviews .carousel-outer .carousel-container .ca
   padding: 0 3rem 0 1rem;
 }
 
-body .container-fluid .container-reviews .carousel-outer .carousel-container .carousel-reviews .review-item .profile-container .rating-container i {
-  color: #9e6739;
+body .container-fluid .container-reviews .carousel-outer .carousel-container .carousel-reviews .review-item .profile-container .rating-container p {
+  color: #8E5C2F;
 }
 
 body .container-fluid .container-reviews .carousel-outer .carousel-container .carousel-reviews .review-item .review-container p {

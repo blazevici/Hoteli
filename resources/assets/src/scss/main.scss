@@ -290,8 +290,9 @@ body {
                             color: #FFFFFF;
                         }
     
-                        h5 {
+                        h2 {
                             color: #FFFFFF;
+                            font-size: 1.5em;
                             font-weight: 400;
                         }
                     }
@@ -339,6 +340,10 @@ body {
 
                                     .room-text {
                                         @include room-text;
+
+                                        h3 {
+                                            font-size: 1.25em;
+                                        }
                                     }
                                 }
                             }
@@ -405,7 +410,7 @@ body {
 
                         font-size: 0.8rem !important;
 
-                        h5 {
+                        h3 {
                             font-size: 1.1rem;
                         }
 
@@ -454,11 +459,12 @@ body {
                     max-width: 30%;
                     padding: 0 1rem 0 0;
 
-                    i {
+                    span {
+                        display: inline-block;
                         margin-bottom: 0.5rem;
                         border-radius: 100px;
                         background-color: rgb(240, 236, 231);
-                        width: 70px;
+                        width: 80px;
                     }
 
                     .info-text {
@@ -540,7 +546,7 @@ body {
                                     padding: 1rem 1rem 0.5rem 1rem;
 
                                     .above-header {
-                                        color: gray;
+                                        color: #424242;
                                     }
 
                                     p {
@@ -689,8 +695,8 @@ body {
                                     padding: 0 3rem 0 1rem;
                                 }
 
-                                .rating-container i {
-                                    color: $rating-color;
+                                .rating-container p {
+                                    color: $button-color;
                                 }
                             }
 

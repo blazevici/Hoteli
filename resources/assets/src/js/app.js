@@ -1,7 +1,6 @@
 //import Vue from 'vue';
 
 window.$ = window.jQuery = require('jquery');
-//window.Popper = require('popper.js').default;
 require('webpack-jquery-ui/datepicker');
 require('webpack-jquery-ui/css');
 //import 'bootstrap';

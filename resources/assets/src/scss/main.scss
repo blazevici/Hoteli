@@ -32,7 +32,7 @@ $font-text: "DM Serif Text", serif;
         }
     }
 
-    h4 {
+    h3 {
         position: absolute;
         right: 0;
         top: 0;
@@ -339,10 +339,26 @@ body {
                                 
 
                                     .room-text {
-                                        @include room-text;
+                                        padding: 1.2rem 1.2rem 0.2rem 1.2rem;
+                                        position: relative;
+
+                                        p {
+
+                                            a, i {
+                                                color: $button-color;
+                                            }
+                                        }
 
                                         h3 {
-                                            font-size: 1.25em;
+                                            font-size: 1.5rem;
+                                        }
+
+                                        h4 {
+                                            position: absolute;
+                                            right: 0;
+                                            top: 0;
+                                            padding: 2rem 1rem 2rem 0;
+                                            font-weight: bold;
                                         }
                                     }
                                 }
@@ -410,11 +426,11 @@ body {
 
                         font-size: 0.8rem !important;
 
-                        h3 {
+                        h2 {
                             font-size: 1.1rem;
                         }
 
-                        h4 {
+                        h3 {
                             font-size: 1.3rem;
                         }
                     }
@@ -553,11 +569,12 @@ body {
                                         margin-bottom: 0.5rem;
                                     }
 
-                                    h4 {
+                                    h2 {
                                         text-overflow: ellipsis;
                                         overflow: hidden;
                                         white-space: nowrap;
                                         line-height: 2rem;
+                                        font-size: 1.5rem;
                                     }
 
                                     p i {
@@ -746,6 +763,10 @@ body {
 
                     .col-sm {
                         padding: 3rem 0 1.5rem 0;
+
+                        h2 {
+                            font-size: 1.25rem;
+                        }
     
                         p a {
                             color: #FFFFFF;
@@ -783,6 +804,10 @@ body {
     
                             a {
                                 color: #FFFFFF;
+                            }
+
+                            h2 {
+                                font-size: 1.25rem;
                             }
                         }
                     }

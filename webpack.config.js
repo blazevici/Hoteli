@@ -1,14 +1,15 @@
 const CompressionPlugin = require('compression-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   rules: [
     {
       test: /\.s(c|a)ss$/,
       use: [
-        'vue-style-loader',
+        MiniCssExtractPlugin.loader,
         'css-loader',
         {
           loader: 'sass-loader',
@@ -30,10 +31,6 @@ module.exports = {
       ],
     },
     {
-      test: /\.css$/,
-      loaders: [MiniCssExtractPlugin.loader,"css-loader"]
-    },
-    {
       test: /\.(jpe?g|png|gif)$/i,
       loader:"file-loader",
       options:{
@@ -44,10 +41,10 @@ module.exports = {
     }
   ],
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [
+      new OptimizeCssAssetsPlugin(),
+      new TerserPlugin()
+    ],
   },
   resolve: {
     alias: {
